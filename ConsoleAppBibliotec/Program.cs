@@ -18,36 +18,7 @@ namespace ConsoleAppBibliotec
 
             if (MenuInicial() == 1)
             {
-                Console.Clear();
-
-                MostrarSejaBemVindo();
-
-                Console.WriteLine("Menu - Alocação de livros");
-                Console.WriteLine("Digite o nome do livro a ser alocado :");
-
-                var nomedolivro = Console.ReadLine();
-                if (PesquisaLivroParaAlocacao(nomedolivro))
-                {
-                    Console.Clear();
-                    Console.WriteLine("Voce deseja alocar o livro?para sim(1) para não(0)");
-
-                    if (Console.ReadKey().KeyChar.ToString() == "1") // if se faz isso
-                    {
-                        AlocarLivro(nomedolivro);
-                        Console.Clear();
-                        Console.WriteLine("Livro Alocado com sucesso!");
-                    }
-                    else                                             // else se não isso
-                        Console.ReadKey();
-
-                    Console.WriteLine("Listagem de livros:");
-
-                    for (int i = 0; i < baseDelivros.GetLength(0); i++)
-                    {
-                        Console.WriteLine($"Nome: {baseDelivros[i, 0]} Disponivel: {baseDelivros[i, 1]}");
-                    }
-                }
-
+                MostrarMenuAlocacao(); 
             }
 
             Console.ReadKey();
@@ -122,6 +93,41 @@ namespace ConsoleAppBibliotec
                 if (nomeLivro == baseDelivros[i, 0])
                     baseDelivros[i, 1] = "não";
 
+            }
+        }
+        /// <summary>
+        /// Metodo que carrega o conteudo inicial da aplicação do menu 1
+        /// </summary>
+        public static void MostrarMenuAlocacao()
+        {
+            Console.Clear();
+
+            MostrarSejaBemVindo();
+
+            Console.WriteLine("Menu - Alocação de livros");
+            Console.WriteLine("Digite o nome do livro a ser alocado :");
+
+            var nomedolivro = Console.ReadLine();
+            if (PesquisaLivroParaAlocacao(nomedolivro))
+            {
+                Console.Clear();
+                Console.WriteLine("Voce deseja alocar o livro?para sim(1) para não(0)");
+
+                if (Console.ReadKey().KeyChar.ToString() == "1") // if se faz isso
+                {
+                    AlocarLivro(nomedolivro);
+                    Console.Clear();
+                    Console.WriteLine("Livro Alocado com sucesso!");
+                }
+                else                                             // else se não isso
+                    Console.ReadKey();
+
+                Console.WriteLine("Listagem de livros:");
+
+                for (int i = 0; i < baseDelivros.GetLength(0); i++)
+                {
+                    Console.WriteLine($"Nome: {baseDelivros[i, 0]} Disponivel: {baseDelivros[i, 1]}");
+                }
             }
         }
     }
