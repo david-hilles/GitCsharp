@@ -79,19 +79,35 @@ namespace ConsoleAppBibliotec
         /// </summary>
         /// <param name="nomeLivro">Nome do livro a ser pesquisado</param>
         /// <returns>Retorna verdadeiro em caso o livro estiver livre para alocação.</returns>
-        public static bool PesquisaLivroParaAlocacao(string nomeLivro)
+        public static bool? PesquisaLivroParaAlocacao(ref string nomeLivro)
         {
             for (int i = 0; i < baseDelivros.GetLength(0); i++)
             {
-                if (nomeLivro == baseDelivros[i, 0])
+                if (CompararNomes(nomeLivro, baseDelivros[i, 0]))
                 {
-                    Console.WriteLine($"O livro :{nomeLivro}" + $" pode ser alocado?:{baseDelivros[i, 1]}"); //segunda coluna
+                    Console.WriteLine($"O livro :{nomeLivro}" + 
+                        $" pode ser alocado?:{baseDelivros[i, 1]}");                                      //segunda coluna
 
                     return baseDelivros[i, 1] == "sim"; 
 
                 }
+                
             }
-            return false;
+
+            Console.WriteLine("Nenhum livro encontrado deseja realizar a busca novamente ? ");
+            Console.WriteLine("Digite o numero da opção desejada: sim(1) não (0)");
+
+            int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao);
+
+            if(opcao == 1)
+            {
+                Console.WriteLine("Digite o nome do livro a ser pesquisado:");
+                nomeLivro = Console.ReadLine();
+
+                return PesquisaLivroParaAlocacao( ref nomeLivro);
+            }
+             
+            return null;
         }
         /// <summary>
         /// Metodo que aloca o livro de acordo com o parametro passado.
@@ -101,7 +117,7 @@ namespace ConsoleAppBibliotec
         {
             for (int i = 0; i < baseDelivros.GetLength(0); i++)
             {
-                if (nomeLivro == baseDelivros[i, 0])
+                if (CompararNomes(nomeLivro, baseDelivros[i, 0]))
                 {
                     baseDelivros[i, 1] = alocar? "não" : "sim";
 
@@ -119,7 +135,9 @@ namespace ConsoleAppBibliotec
             MostrarMenuInicialLivros("alocar um livro:");
 
             var nomedolivro = Console.ReadLine();
-            if (PesquisaLivroParaAlocacao(nomedolivro))
+            var resultadoPesquisa = PesquisaLivroParaAlocacao(ref nomedolivro);
+
+            if (resultadoPesquisa != null && resultadoPesquisa == true)
             {
                 Console.Clear();
                 MostrarListaDeLivro();
@@ -132,6 +150,10 @@ namespace ConsoleAppBibliotec
 
                 Console.ReadKey();
 
+            }
+            if (resultadoPesquisa == null)
+            {
+                Console.WriteLine("Nenhum livro encontrado em nossa base de dados do sistema.");
             }
         }
         /// <summary>
@@ -153,7 +175,9 @@ namespace ConsoleAppBibliotec
             MostrarListaDeLivro();
 
             var nomedolivro = Console.ReadLine();
-            if (!PesquisaLivroParaAlocacao(nomedolivro))
+            var resultadoPesquisa = PesquisaLivroParaAlocacao(ref nomedolivro);
+
+            if (resultadoPesquisa != null && resultadoPesquisa == false)
             {
                 Console.Clear();
                 MostrarListaDeLivro();
@@ -167,6 +191,10 @@ namespace ConsoleAppBibliotec
                 Console.ReadKey();
 
             }
+            if (resultadoPesquisa == null)
+            {
+                Console.WriteLine("Nenhum livro encontrado em nossa base de dados do sistema.");
+            }   
         }
         public static void MostrarMenuInicialLivros(string operacao)
         {
@@ -176,6 +204,20 @@ namespace ConsoleAppBibliotec
 
             Console.WriteLine($"Menu - {operacao}");
             Console.WriteLine("Digite o nome do livro a ser alocado :");
+        }
+        /// <summary>
+        /// Metodo que compara duas string deixando em caixa baixa e removendo espaços vazios dentro da mesma.
+        /// </summary>
+        /// <param name="primeiro"></param>
+        /// <param name="segundo"></param>
+        /// <returns></returns>
+        public static bool CompararNomes (string primeiro,string segundo)
+        {
+            if (primeiro.ToLower().Replace(" ", "")
+                    == segundo.ToLower().Replace(" ", ""))
+                return true;
+
+            return false;
         }
     }
 }

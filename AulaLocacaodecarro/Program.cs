@@ -14,7 +14,6 @@ namespace aulaTestecarro
             Carregabase();
            
                    
-
             var opcaoMenu = MenuPrincipal();
 
             while (opcaoMenu != 4)
@@ -47,7 +46,6 @@ namespace aulaTestecarro
 
 
         }
-
         public static int MenuPrincipal()
         {
             Console.Clear();
@@ -76,27 +74,40 @@ namespace aulaTestecarro
                 { "Gol", "2010" , "não" }
             };
         }
-
-        public static bool PesquisaAlocaocarro(string nomedocarro)
+        public static bool? PesquisaAlocaocarro(string nomedocarro)
         {
             for (int i = 0; i < AluguelDeCarro.GetLength(0); i++)
             {
                 if (nomedocarro == AluguelDeCarro[i, 0])
                 {
-                    Console.WriteLine($"O Carro :{nomedocarro}" + $" - Ano {AluguelDeCarro[i, 1]} pode ser alocado?:{AluguelDeCarro[i, 2]}"); //segunda coluna
+                    Console.WriteLine($"O Carro :{nomedocarro}" +
+                        $" - Ano {AluguelDeCarro[i, 1]} pode ser alocado?:{AluguelDeCarro[i, 2]}");         //segunda coluna
 
                     return AluguelDeCarro[i, 2] == "sim";
 
                 }
+                return false;
             }
-            return false;
-        }
 
+            Console.WriteLine("Nenhum Carro encontrado deseja realizar a busca novamente ? ");
+            Console.WriteLine("Digite o numero da opção desejada: sim(1) não (0)");
+
+            int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao);
+            if (opcao == 1)
+            {
+                Console.WriteLine("Digite o nome do Carro a ser pesquisado:");
+                nomedocarro = Console.ReadLine();
+
+                return PesquisaAlocaocarro(nomedocarro);
+            }
+
+            return null;
+        }
         public static void AlocarCarro(string nomecarro, bool alocar)
         {
             for (int i = 0; i < AluguelDeCarro.GetLength(0); i++)
             {
-                if (nomecarro == AluguelDeCarro[i, 0])
+                if (CompararNomes(nomecarro, AluguelDeCarro[i, 0]))
                 {
                     AluguelDeCarro[i, 2] = alocar ? "não" : "sim";
                 }
@@ -109,10 +120,12 @@ namespace aulaTestecarro
         public static void AlocarUmCarro()
         {
             MostrarMenuInicialCarros("alocar um Carro:\n");
-            MostrarAlocarCarro();
+            // MostrarAlocarCarro();
 
             var nomedocarro = Console.ReadLine();
-            if (PesquisaAlocaocarro(nomedocarro))
+            var resultadoPesquisa = PesquisaAlocaocarro(nomedocarro);
+
+            if (resultadoPesquisa != null && resultadoPesquisa == true)
             {
                 Console.Clear();
                 MostrarSejaBemVindo();
@@ -124,6 +137,10 @@ namespace aulaTestecarro
                 //MostrarAlocarCarro();
 
                 Console.ReadKey();
+            }
+            if (resultadoPesquisa == null)
+            {
+                Console.WriteLine("Nenhum Carro encontrado em nossa base de dados do sistema.");
             }
 
         }
@@ -139,13 +156,14 @@ namespace aulaTestecarro
         public static void DesalocarUmCarro()
         {
             
-
             MostrarMenuInicialCarros("Desalocar o Carro:\r\n");
+
             MostrarAlocarCarro();
-            Console.WriteLine("\nDigite o modelo do carro :");
 
             var nomedocarro = Console.ReadLine();
-            if (!PesquisaAlocaocarro(nomedocarro))
+            var resultadoPesquisa = PesquisaAlocaocarro(nomedocarro);
+
+            if(resultadoPesquisa != null && resultadoPesquisa == false)
             {
 
                 Console.Clear();
@@ -154,11 +172,14 @@ namespace aulaTestecarro
 
                 AlocarCarro(nomedocarro, Console.ReadKey().KeyChar.ToString() == "0");                         // if se faz isso
 
-                Console.WriteLine("\n Digite qualquer tecla para retornar");
-                //MostrarAlocarCarro();
+                MostrarAlocarCarro();
 
                 Console.ReadKey();
 
+            }
+            if (resultadoPesquisa == null)
+            {
+                Console.WriteLine("Nenhum Carro encontrado em nossa base de dados do sistema.");
             }
 
         }
@@ -169,10 +190,17 @@ namespace aulaTestecarro
             MostrarSejaBemVindo();
 
             Console.WriteLine($"Menu - {operacao}");
-            //Console.WriteLine("Digite o modelo do carro :");
+            //Console.WriteLine("Digite o modelo do carro a ser alocado:");
 
         }
+        public static bool CompararNomes (string primeiro,string segundo)
+        {
+            if (primeiro.ToLower().Replace(" ", "")
+                   == segundo.ToLower().Replace(" ", ""))
+                return true;
 
+            return false;
+        }
     }
 }
   
