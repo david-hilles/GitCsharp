@@ -74,7 +74,7 @@ namespace aulaTestecarro
                 { "Gol", "2010" , "não" }
             };
         }
-        public static bool? PesquisaAlocaocarro(string nomedocarro)
+        public static bool? PesquisaAlocaocarro(ref string nomedocarro)
         {
             for (int i = 0; i < AluguelDeCarro.GetLength(0); i++)
             {
@@ -86,7 +86,7 @@ namespace aulaTestecarro
                     return AluguelDeCarro[i, 2] == "sim";
 
                 }
-                return false;
+                
             }
 
             Console.WriteLine("Nenhum Carro encontrado deseja realizar a busca novamente ? ");
@@ -98,7 +98,7 @@ namespace aulaTestecarro
                 Console.WriteLine("Digite o nome do Carro a ser pesquisado:");
                 nomedocarro = Console.ReadLine();
 
-                return PesquisaAlocaocarro(nomedocarro);
+                return PesquisaAlocaocarro(ref nomedocarro);
             }
 
             return null;
@@ -123,7 +123,7 @@ namespace aulaTestecarro
             // MostrarAlocarCarro();
 
             var nomedocarro = Console.ReadLine();
-            var resultadoPesquisa = PesquisaAlocaocarro(nomedocarro);
+            var resultadoPesquisa = PesquisaAlocaocarro(ref nomedocarro);
 
             if (resultadoPesquisa != null && resultadoPesquisa == true)
             {
@@ -161,7 +161,7 @@ namespace aulaTestecarro
             MostrarAlocarCarro();
 
             var nomedocarro = Console.ReadLine();
-            var resultadoPesquisa = PesquisaAlocaocarro(nomedocarro);
+            var resultadoPesquisa = PesquisaAlocaocarro(ref nomedocarro);
 
             if(resultadoPesquisa != null && resultadoPesquisa == false)
             {
@@ -190,7 +190,7 @@ namespace aulaTestecarro
             MostrarSejaBemVindo();
 
             Console.WriteLine($"Menu - {operacao}");
-            //Console.WriteLine("Digite o modelo do carro a ser alocado:");
+            Console.WriteLine("Digite o modelo do carro a ser alocado:");
 
         }
         public static bool CompararNomes (string primeiro,string segundo)
