@@ -26,6 +26,16 @@ namespace CriacaoDeLista
 
             Console.ReadKey();
 
+            for (int i = 0; i < lista.Length; i++)
+                lista[i] = string.Empty;//Aqui limpamos o nosso valor dentro da coleção
+
+            //Laço de repetição que usamos para varrer nossa lista de maneira mais simples
+            foreach (var item in lista)
+                Console.WriteLine(item);
+
+            Console.ReadKey();
+
+
         }
     }
 }
