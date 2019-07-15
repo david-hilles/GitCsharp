@@ -25,12 +25,12 @@ namespace ExercicioSegundaFeiraCriacao
                 listaDeCarros[i, 0] = (IDLista++).ToString();
                 listaDeCarros[i, 1] = nomeCarro;
 
-                Console.WriteLine("\r\ninforme a placa do carro para adicionar na lista");
+                Console.WriteLine("\r\n Informe a placa do carro para adicionar na lista");
                 var placa = Console.ReadLine();
 
                 listaDeCarros[i, 2] = placa;
 
-                Console.WriteLine("\r\ninforme a cor do carro para adicionar na lista");
+                Console.WriteLine("\r\n Informe a cor do carro para adicionar na lista");
                 var cor = Console.ReadLine();
 
                 listaDeCarros[i, 3] = cor;
@@ -41,7 +41,7 @@ namespace ExercicioSegundaFeiraCriacao
                 if (continuar == "0")
                     break;
 
-
+                AumentaTamanhoLista(ref listaDeCarros);
             }
 
 
@@ -49,7 +49,7 @@ namespace ExercicioSegundaFeiraCriacao
 
             for (int i = 0; i < listaDeCarros.GetLength(0); i++)
                 //Utilizamos o string format, basicamente ele faz da mesma forma que o $
-                //a diferença entre eles é que este e um cara em grande quantidades
+                //a diferença entre ele é que este e um cara em grande quantidades
                 //acaba sendo mais rápido
 
                 Console.WriteLine(string.Format("Registro ID {0} - Carro: {1} - Placa: {2} - Cor: {3} ", listaDeCarros[i, 0], listaDeCarros[i, 1], listaDeCarros[i, 2], listaDeCarros[i, 3]));
@@ -57,6 +57,32 @@ namespace ExercicioSegundaFeiraCriacao
 
             Console.ReadKey();
 
+        }
+        public static void AumentaTamanhoLista(ref string[,] listaDeCarros)
+        {
+            var limiteDaLista = true;
+
+            for (int i = 0; i < listaDeCarros.GetLength(0); i++)
+            {
+                if (listaDeCarros[i, 0] == null)
+                    limiteDaLista = false;
+
+            }
+            if(limiteDaLista)
+            {
+                var listaCopia = listaDeCarros;
+
+                listaDeCarros = new string[listaDeCarros.GetLength(0) + 5, 2];
+
+                for (int i = 0; i < listaCopia.GetLength(0); i++)
+                {
+                    listaDeCarros[i, 0] = listaCopia[i, 0];
+                    listaDeCarros[i, 1] = listaCopia[i, 1];
+                    listaDeCarros[i, 2] = listaCopia[i, 2];
+                }
+
+                Console.WriteLine("O tamanho da lista foi atualizado");
+            }
         }
     }
 }
