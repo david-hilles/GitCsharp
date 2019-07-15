@@ -12,6 +12,21 @@ namespace ExercicioSegundaFeiraCriacao
         {
             string[,] listaDeCarros = new string[5, 4];
 
+            int IdParaLista = 0; ;
+
+            InsereRegistro(ref listaDeCarros, ref IdParaLista);
+
+            Console.ReadKey();
+
+            InsereRegistro(ref listaDeCarros, ref IdParaLista);
+
+            Console.ReadKey();
+        }
+
+        public static void InsereRegistro(ref string[,] listaDeCarros, ref int IdParaLista)
+
+        {
+            int IDLista = 0;
             for (int i = 0; i < listaDeCarros.GetLength(0); i++)
             {
 
@@ -20,7 +35,7 @@ namespace ExercicioSegundaFeiraCriacao
 
                 Console.WriteLine("\r\nInforme um carro para adicionar na lista");
                 var nomeCarro = Console.ReadLine();
-                int IDLista = 0;
+                
 
                 listaDeCarros[i, 0] = (IDLista++).ToString();
                 listaDeCarros[i, 1] = nomeCarro;
@@ -42,8 +57,8 @@ namespace ExercicioSegundaFeiraCriacao
                     break;
 
                 AumentaTamanhoLista(ref listaDeCarros);
-            }
 
+            }
 
             Console.WriteLine("Registro adicionado com sucesso, lista das informações adicionadas: ");
 
@@ -68,7 +83,7 @@ namespace ExercicioSegundaFeiraCriacao
                     limiteDaLista = false;
 
             }
-            if(limiteDaLista)
+            if (limiteDaLista)
             {
                 var listaCopia = listaDeCarros;
 
