@@ -12,7 +12,7 @@ namespace ExercicioSegundaFeiraCriacao
         {
             string[,] listaDeCarros = new string[5, 4];
 
-            int IdParaLista = 0; ;
+            int IdParaLista = 0;
 
             InsereRegistro(ref listaDeCarros, ref IdParaLista);
 
