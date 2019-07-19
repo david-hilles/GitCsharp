@@ -1,8 +1,8 @@
-﻿CREATE TABLE [dbo].[Notas] (
-    [Id]    INT IDENTITY (1, 1) NOT NULL,
-    [Nota1] INT NOT NULL,
-    [Aluno] INT NOT NULL,
+﻿CREATE TABLE [dbo].[Aluno] (
+    [Id]         INT           IDENTITY (1, 1) NOT NULL,
+    [Nome]       VARCHAR (100) NOT NULL,
+    [Disciplina] INT           NOT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC),
-    CONSTRAINT [FK_Notas_Aluno] FOREIGN KEY ([Aluno]) REFERENCES [dbo].[Aluno] ([Id])
+    CONSTRAINT [FK_Aluno_Disciplina] FOREIGN KEY ([Disciplina]) REFERENCES [dbo].[Disciplina] ([Id])
 );
 
