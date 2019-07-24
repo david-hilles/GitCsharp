@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{125FDC22-C310-4788-8287-500AD479D269}</ProjectGuid>
+    <ProjectGuid>{FA5EB0E2-DCA1-4EFD-9ACF-4228AE0D5433}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CriacaoDeLista</RootNamespace>
-    <AssemblyName>CriacaoDeLista</AssemblyName>
+    <RootNamespace>UsandoBiliotecaDeLista1</RootNamespace>
+    <AssemblyName>UsandoBiliotecaDeLista1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,13 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Organizando.Lista\Listas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CriacaoDeLista\CriacaoDeLista.csproj">
+      <Project>{125fdc22-c310-4788-8287-500ad479d269}</Project>
+      <Name>CriacaoDeLista</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

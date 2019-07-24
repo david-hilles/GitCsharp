@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{125FDC22-C310-4788-8287-500AD479D269}</ProjectGuid>
+    <ProjectGuid>{EAA57ACB-57EB-45A8-AEC1-D3A3D39B687A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CriacaoDeLista</RootNamespace>
-    <AssemblyName>CriacaoDeLista</AssemblyName>
+    <RootNamespace>ProjetoDaCalculadora</RootNamespace>
+    <AssemblyName>ProjetoDaCalculadora</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,13 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Organizando.Lista\Listas.cs" />
+    <Compile Include="Calculadora.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
