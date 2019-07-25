@@ -14,9 +14,12 @@ namespace UsandoBibliotecaDeOutroProjeto
         static void Main(string[] args)
         {
             Calculadora bbCalc = new Calculadora();
+
             Console.WriteLine($" Soma = {bbCalc.CalculaAdicao(10, 35)}");
 
             Console.WriteLine(" Sutração =  " + bbCalc.CalculaSubtração(10, 35));
+
+            Console.WriteLine(" Multiplicacao =  " + bbCalc.CalculaMultiplicacao(10, 35));
 
             Console.ReadKey();
 
