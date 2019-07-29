@@ -14,9 +14,12 @@ namespace UsandoBIbliotecaJoinha
            new AquiMostraJoinha().MetodoInicialDoJoinha();
          
            new AquiMostraJoinha().MetodoDoisPontoZero(true);
+
            new AquiMostraJoinha().MetodoDoisPontoZero(false);
+
            Console.WriteLine(new AquiMostraJoinha().TesteUmOperadorLegal());
 
+            
             //Operacao pesada como leitura a gravaçao na memoria
             var outroCaraParaRealizarOTeste = new AquiMostraJoinha()
             .TesteUmOperadorLegal();
