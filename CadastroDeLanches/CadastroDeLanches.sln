@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroDeLanches", "CadastroDeLanches.csproj", "{5F441872-1912-4A88-BE21-9577809A4416}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F441872-1912-4A88-BE21-9577809A4416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F441872-1912-4A88-BE21-9577809A4416}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F441872-1912-4A88-BE21-9577809A4416}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F441872-1912-4A88-BE21-9577809A4416}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC62A61C-6F13-4CC6-BAA1-48B774051DD9}
+	EndGlobalSection
+EndGlobal
