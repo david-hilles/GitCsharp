@@ -11,5 +11,8 @@ namespace CadastroDeLanches.Classes
         public string Nome { get; set; }
         public int Quantidade { get; set; }
         public double Valor { get; set; }
+
+        public DateTime DatInc { get; set; } = DateTime.Now;
+
     }
 }

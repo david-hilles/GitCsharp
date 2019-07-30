@@ -37,5 +37,10 @@ namespace CadastroDeLanches
 
             this.Close();
         }
+
+        private void TbxNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

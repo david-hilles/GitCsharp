@@ -73,6 +73,7 @@
             this.tbxNome.Name = "tbxNome";
             this.tbxNome.Size = new System.Drawing.Size(199, 22);
             this.tbxNome.TabIndex = 3;
+            this.tbxNome.TextChanged += new System.EventHandler(this.TbxNome_TextChanged);
             // 
             // nrQuant
             // 
