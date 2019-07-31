@@ -15,6 +15,7 @@ namespace TabelaDeVIsualizacaoDeValores.Model
         /// </summary>
         public int value { get; set; }
 
+
         public DateTime DatInc { get; set; }
 
     }
