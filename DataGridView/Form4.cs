@@ -48,7 +48,6 @@ namespace DataGridView
 
                         this.vendasTableAdapter.Update(editVendas.VendasRow);
 
-
                     }
                     break;
             }
