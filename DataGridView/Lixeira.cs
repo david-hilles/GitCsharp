@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DataGridView
 {
-    public partial class Lixeira : Form
+    public partial class LixeiraUsuarios : Form
     {
-        public Lixeira()
+        public LixeiraUsuarios()
         {
             InitializeComponent();
         }

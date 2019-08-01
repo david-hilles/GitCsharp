@@ -10,38 +10,38 @@ using System.Windows.Forms;
 
 namespace DataGridView
 {
-    public partial class LixeiraMarcas : Form
+    public partial class LixeiraVendas : Form
     {
-        public LixeiraMarcas()
+        public LixeiraVendas()
         {
             InitializeComponent();
         }
 
-        private void LixeiraMarcas_Load(object sender, EventArgs e)
+        private void LixeiraVendas_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'querysInnerJoinDataSet1.Marcas'. Você pode movê-la ou removê-la conforme necessário.
-            this.marcasTableAdapter.RegistrosInativo(this.querysInnerJoinDataSet1.Marcas);
+            // TODO: esta linha de código carrega dados na tabela 'querysInnerJoinDataSet1.Vendas'. Você pode movê-la ou removê-la conforme necessário.
+            this.vendasTableAdapter.RegistrosInativo(this.querysInnerJoinDataSet1.Vendas);
 
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var MarcasSelect = ((System.Data.DataRowView)
+            var VendasSelect = ((System.Data.DataRowView)
             this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
-            as DataGridView.QuerysInnerJoinDataSet1.MarcasRow;
+            as DataGridView.QuerysInnerJoinDataSet1.VendasRow;
 
             switch (e.ColumnIndex)
             {
                 //COLUNA DELETAR
                 case 0:
                     {
-                        this.marcasTableAdapter.RestaurarMarcas(MarcasSelect.Id);
-                        
+                        this.vendasTableAdapter.Restaurar(VendasSelect.Id);
                     }
                     break;
             }
+            this.vendasTableAdapter.RegistrosInativo(this.querysInnerJoinDataSet1.Vendas);
 
-            this.marcasTableAdapter.RegistrosInativo(querysInnerJoinDataSet1.Marcas);
+
         }
     }
 }

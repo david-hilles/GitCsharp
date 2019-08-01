@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridView.Edicao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -67,14 +68,35 @@ namespace DataGridView
                         this.carrosTableAdapter.DeleteQuery(carSelect.Id);
                         //this.carrosTableAdapter.CustomQuery(querysInnerJoinDataSet1.Carros);
                     }break;
+                case 1: {
+                        FrmEdicaoCarros editCarro = new FrmEdicaoCarros();
+                        editCarro.CarrosRow = carSelect;
+                        editCarro.ShowDialog();
+
+                        //COM ESSE EXEMPLO NAO PRECISA CRIAR QUERY
+                        //this.carrosTableAdapter.Update(editCar.CarrosRow); 
+
+                        this.carrosTableAdapter.UpdateQuery(
+                            editCarro.CarrosRow.Modelo,
+                            editCarro.CarrosRow.Ano.ToString(),
+                            editCarro.CarrosRow.Marca,
+                            editCarro.CarrosRow.UsuAlt,
+                            DateTime.Now,
+                            editCarro.CarrosRow.Id);
+
+
+                    } break;
+                        
+
             }
+
           //  this.carrosTableAdapter.DeleteQuery(carSelect.Id);
             this.carrosTableAdapter.CustomQuery(querysInnerJoinDataSet1.Carros);     //PARA MOSTRAR ATUALIZADA
         }
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            Lixeira lixo = new Lixeira();
+            LixeiraUsuarios lixo = new LixeiraUsuarios();
             lixo.ShowDialog();
 
         }

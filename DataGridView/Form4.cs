@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridView.Edicao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,9 +31,36 @@ namespace DataGridView
             this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
             as DataGridView.QuerysInnerJoinDataSet1.VendasRow;
 
-            this.vendasTableAdapter.DeleteQuery(vendasSelect.Id);
+            switch (e.ColumnIndex)
+            {
+                case 0:
+                    {
+                        this.vendasTableAdapter.DeleteQuery(vendasSelect.Id);
+                    }
+                    break;
+                case 1:
+                    {
+                        frmEdicaoVendas editVendas = new frmEdicaoVendas();
+                        editVendas.VendasRow = vendasSelect;
+                        editVendas.ShowDialog();
 
-            this.vendasTableAdapter.CustomQuery(querysInnerJoinDataSet1.Vendas);
+                        //COM ESSE EXEMPLO NAO PRECISA CRIAR QUERY
+
+                        this.vendasTableAdapter.Update(editVendas.VendasRow);
+
+
+                    }
+                    break;
+            }
+
+            this.vendasTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Vendas);
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            LixeiraVendas lixo = new LixeiraVendas();
+            lixo.ShowDialog();
+
         }
     }
 }
