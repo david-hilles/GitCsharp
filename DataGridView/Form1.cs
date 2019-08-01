@@ -1,4 +1,5 @@
-﻿using DataGridView.Edicao;
+﻿using DataGridView.Adicionar;
+using DataGridView.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,7 +29,20 @@ namespace DataGridView
 
         private void Button1_Click(object sender, EventArgs e)
         {
-
+            frmAdicionar formAdd = new frmAdicionar();
+            formAdd.ShowDialog();
+            this.carrosTableAdapter.Insert(
+            formAdd.carrosRow.Modelo,
+            formAdd.carrosRow.Ano,
+            formAdd.carrosRow.Marca,
+            true,
+            1,
+            1,
+            DateTime.Now,
+            DateTime.Now
+            );
+                                  //ATUALIZA A TABELA //
+            this.carrosTableAdapter.Fill(this.querysInnerJoinDataSet1.Carros);
         }
 
         private void Button2_Click(object sender, EventArgs e)

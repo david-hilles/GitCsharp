@@ -33,7 +33,8 @@ namespace DataGridView
              var carSelect = ((System.Data.DataRowView)
              this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
              as DataGridView.QuerysInnerJoinDataSet1.CarrosRow;
-            switch (e.RowIndex)
+
+            switch (e.ColumnIndex)
             {
                 case 0:
                     {

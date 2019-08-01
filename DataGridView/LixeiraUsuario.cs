@@ -32,7 +32,7 @@ namespace DataGridView
 
             switch (e.ColumnIndex)
             {
-                //COLUNA DELETAR
+                
                 case 0:
                     {
                         this.usuariosTableAdapter.Restaurar(UsuariosSelect.Id);
