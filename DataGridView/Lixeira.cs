@@ -19,12 +19,15 @@ namespace DataGridView
 
         private void Lixeira_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'querysInnerJoinDataSet1.Usuarios'. Você pode movê-la ou removê-la conforme necessário.
+            //this.usuariosTableAdapter.Fill(this.querysInnerJoinDataSet1.Usuarios);
             // TODO: esta linha de código carrega dados na tabela 'querysInnerJoinDataSet1.Carros'. Você pode movê-la ou removê-la conforme necessário.
             //this.carrosTableAdapter.Fill(this.querysInnerJoinDataSet1.Carros);
             // TODO: esta linha de código carrega dados na tabela 'querysInnerJoinDataSet1.Carros'. Você pode movê-la ou removê-la conforme necessário.
             // this.carrosTableAdapter.Fill(this.querysInnerJoinDataSet1.Carros);
             // TODO: esta linha de código carrega dados na tabela 'querysInnerJoinDataSet1.DataTable1'. Você pode movê-la ou removê-la conforme necessário.
             this.carrosTableAdapter.RegistrosInativos(this.querysInnerJoinDataSet1.Carros);
+           // this.usuariosTableAdapter.RegistrosInativos(this.querysInnerJoinDataSet1.Usuarios);
 
         }
 

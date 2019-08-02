@@ -1,4 +1,5 @@
-﻿using DataGridView.Edicao;
+﻿using DataGridView.Adicionar;
+using DataGridView.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,6 +60,32 @@ namespace DataGridView
         {
             LixeiraVendas lixo = new LixeiraVendas();
             lixo.ShowDialog();
+            this.vendasTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Vendas);
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmAdicionarVendas formAddVendas = new frmAdicionarVendas();
+            formAddVendas.ShowDialog();
+
+            if (formAddVendas.vendasRow?.Nomecarros > 0
+                && formAddVendas.vendasRow?.Valor > 0)
+                
+                this.vendasTableAdapter.Insert(
+                formAddVendas.vendasRow.Nomecarros,
+                formAddVendas.vendasRow.Quantidade,
+                formAddVendas.vendasRow.Valor,
+
+                true,
+                1,
+                1,
+                DateTime.Now,
+                DateTime.Now
+                );
+            //ATUALIZA A TABELA //
+            //this.usuariosTableAdapter.Fill(this.querysInnerJoinDataSet1.Usuarios);
+            this.vendasTableAdapter.CustomQuery(querysInnerJoinDataSet1.Vendas);
+
 
         }
     }

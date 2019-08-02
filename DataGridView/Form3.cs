@@ -1,4 +1,5 @@
-﻿using DataGridView.Edicao;
+﻿using DataGridView.Adicionar;
+using DataGridView.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,8 +60,30 @@ namespace DataGridView
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            LixeiraUsuarios lixo = new LixeiraUsuarios();
+            LixeiraUsuario lixo = new LixeiraUsuario();
             lixo.ShowDialog();
+            this.usuariosTableAdapter.CustomQuery(querysInnerJoinDataSet1.Usuarios);
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmAdicionarUsuarios formAddusuarios = new frmAdicionarUsuarios();
+            formAddusuarios.ShowDialog();
+            if (!string.IsNullOrEmpty(formAddusuarios.usuariosRow?.Nomeusuario)) //COD PARA RETORNAR TELA, QUANDO FECHADA NÃO DEBUGA
+
+            this.usuariosTableAdapter.Insert(
+            formAddusuarios.usuariosRow.Nomeusuario,
+
+            true,
+            1,
+            1,
+            DateTime.Now,
+            DateTime.Now
+            );
+            //ATUALIZA A TABELA //
+            //this.usuariosTableAdapter.Fill(this.querysInnerJoinDataSet1.Usuarios);
+            this.usuariosTableAdapter.CustomQuery(querysInnerJoinDataSet1.Usuarios);
+
 
         }
     }

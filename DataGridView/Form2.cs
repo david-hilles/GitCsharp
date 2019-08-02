@@ -1,4 +1,5 @@
-﻿using DataGridView.Edicao;
+﻿using DataGridView.Adicionar;
+using DataGridView.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,23 @@ namespace DataGridView
 
         private void Button1_Click(object sender, EventArgs e)
         {
+
+            frmAdicionarMarcas formAdd = new frmAdicionarMarcas();
+            formAdd.ShowDialog();
+
+            if (!string.IsNullOrEmpty(formAdd.marcasRow?.Nome))
+            this.marcasTableAdapter.Insert(
+            formAdd.marcasRow.Nome,
+
+            true,
+            1,
+            1,
+            DateTime.Now,
+            DateTime.Now
+            );
+            //ATUALIZA A TABELA //
+            this.marcasTableAdapter.Fill(this.querysInnerJoinDataSet1.Marcas);
+
 
         }
 
@@ -65,7 +83,7 @@ namespace DataGridView
         {
             LixeiraMarcas lixo = new LixeiraMarcas();
             lixo.ShowDialog();
-
+            this.marcasTableAdapter.CustomQuery(querysInnerJoinDataSet1.Marcas);
         }
     }
 }

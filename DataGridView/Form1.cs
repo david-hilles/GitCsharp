@@ -31,6 +31,9 @@ namespace DataGridView
         {
             frmAdicionar formAdd = new frmAdicionar();
             formAdd.ShowDialog();
+
+            if(!string.IsNullOrEmpty(formAdd.carrosRow?.Modelo)) 
+
             this.carrosTableAdapter.Insert(
             formAdd.carrosRow.Modelo,
             formAdd.carrosRow.Ano,
