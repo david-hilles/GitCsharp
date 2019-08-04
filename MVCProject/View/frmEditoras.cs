@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCProject.View.Adicionar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,12 @@ namespace MVCProject.View
             // TODO: esta linha de código carrega dados na tabela 'sistemaBibliotecaDBDataSet.Editoras'. Você pode movê-la ou removê-la conforme necessário.
             this.editorasTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Editoras);
 
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmAdicionarEditoras NovaTela = new frmAdicionarEditoras();
+            NovaTela.ShowDialog();
         }
     }
 }
