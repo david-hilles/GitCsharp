@@ -73,6 +73,18 @@
     <Compile Include="View\Adicionar\frmAdicionarAutores.Designer.cs">
       <DependentUpon>frmAdicionarAutores.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarEditoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarEditoras.Designer.cs">
+      <DependentUpon>frmAdicionarEditoras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarGeneros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarGeneros.Designer.cs">
+      <DependentUpon>frmAdicionarGeneros.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Edicao\frmEdicaoAutores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +96,12 @@
     </Compile>
     <Compile Include="View\Edicao\frmEdicaoEditoras.Designer.cs">
       <DependentUpon>frmEdicaoEditoras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoGeneros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoGeneros.Designer.cs">
+      <DependentUpon>frmEdicaoGeneros.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmAutores.cs">
       <SubType>Form</SubType>
@@ -142,11 +160,20 @@
     <EmbeddedResource Include="View\Adicionar\frmAdicionarAutores.resx">
       <DependentUpon>frmAdicionarAutores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Adicionar\frmAdicionarEditoras.resx">
+      <DependentUpon>frmAdicionarEditoras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Adicionar\frmAdicionarGeneros.resx">
+      <DependentUpon>frmAdicionarGeneros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Edicao\frmEdicaoAutores.resx">
       <DependentUpon>frmEdicaoAutores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Edicao\frmEdicaoEditoras.resx">
       <DependentUpon>frmEdicaoEditoras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Edicao\frmEdicaoGeneros.resx">
+      <DependentUpon>frmEdicaoGeneros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmAutores.resx">
       <DependentUpon>frmAutores.cs</DependentUpon>

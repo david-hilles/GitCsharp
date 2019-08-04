@@ -16,5 +16,10 @@ namespace MVCProject.View.Adicionar
         {
             InitializeComponent();
         }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -29,6 +29,7 @@ namespace MVCProject.View
         {
             frmAdicionarAutores NovaTela =  new frmAdicionarAutores();
             NovaTela.ShowDialog();
+
         }
     }
 }
