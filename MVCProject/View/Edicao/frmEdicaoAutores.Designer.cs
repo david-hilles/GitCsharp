@@ -75,12 +75,13 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Salvar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // frmEdicaoAutores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 249);
+            this.ClientSize = new System.Drawing.Size(430, 249);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -88,6 +89,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmEdicaoAutores";
             this.Text = "frmAutores";
+            this.Load += new System.EventHandler(this.FrmEdicaoAutores_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

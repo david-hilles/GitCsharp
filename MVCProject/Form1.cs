@@ -18,14 +18,31 @@ namespace MVCProject
         {
             InitializeComponent();
 
-            
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            frmPrincipal principal = new frmPrincipal();
-            principal.ShowDialog();
-            this.Close();
+            //frmPrincipal principal = new frmPrincipal();
+            //principal.ShowDialog();
+            //this.Close();
+
+
+            var result = this.usuariosTableAdapter1.LoginQuery(textBox1.Text,textBox2.Text);
+
+            if(result != null)
+            {
+                Session.user = new Usuario();
+                Session.user.Id = (int)result;
+
+                frmPrincipal frm = new frmPrincipal();
+                frm.ShowDialog();
+                
+            }
+            else
+            {
+                MessageBox.Show("Login ou senha invalido");
+            }
+
         }
     }
 }

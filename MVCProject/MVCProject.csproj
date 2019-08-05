@@ -59,9 +59,13 @@
     <Compile Include="Model\Livro.cs" />
     <Compile Include="Model\LivroAutor.cs" />
     <Compile Include="Model\Locacao.cs" />
+    <Compile Include="Model\Session.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SistemaBibliotecaDBDataSet.cs">
+      <DependentUpon>SistemaBibliotecaDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SistemaBibliotecaDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -85,6 +89,30 @@
     <Compile Include="View\Adicionar\frmAdicionarGeneros.Designer.cs">
       <DependentUpon>frmAdicionarGeneros.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarLivroAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarLivroAutor.Designer.cs">
+      <DependentUpon>frmAdicionarLivroAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarLivros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarLivros.Designer.cs">
+      <DependentUpon>frmAdicionarLivros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarLocacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarLocacoes.Designer.cs">
+      <DependentUpon>frmAdicionarLocacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adicionar\frmAdicionarUsuarios.Designer.cs">
+      <DependentUpon>frmAdicionarUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Edicao\frmEdicaoAutores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +130,36 @@
     </Compile>
     <Compile Include="View\Edicao\frmEdicaoGeneros.Designer.cs">
       <DependentUpon>frmEdicaoGeneros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoLivros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoLivros.Designer.cs">
+      <DependentUpon>frmEdicaoLivros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoLocacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoLocacoes.Designer.cs">
+      <DependentUpon>frmEdicaoLocacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoUsuarios.Designer.cs">
+      <DependentUpon>frmEdicaoUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoLivroAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Edicao\frmEdicaoLivroAutor.Designer.cs">
+      <DependentUpon>frmEdicaoLivroAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Edicao\frmLivroAutores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Edicao\frmLivroAutores.Designer.cs">
+      <DependentUpon>frmLivroAutores.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmAutores.cs">
       <SubType>Form</SubType>
@@ -166,6 +224,18 @@
     <EmbeddedResource Include="View\Adicionar\frmAdicionarGeneros.resx">
       <DependentUpon>frmAdicionarGeneros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Adicionar\frmAdicionarLivroAutor.resx">
+      <DependentUpon>frmAdicionarLivroAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Adicionar\frmAdicionarLivros.resx">
+      <DependentUpon>frmAdicionarLivros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Adicionar\frmAdicionarLocacoes.resx">
+      <DependentUpon>frmAdicionarLocacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Adicionar\frmAdicionarUsuarios.resx">
+      <DependentUpon>frmAdicionarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Edicao\frmEdicaoAutores.resx">
       <DependentUpon>frmEdicaoAutores.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +244,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Edicao\frmEdicaoGeneros.resx">
       <DependentUpon>frmEdicaoGeneros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Edicao\frmEdicaoLivros.resx">
+      <DependentUpon>frmEdicaoLivros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Edicao\frmEdicaoLocacoes.resx">
+      <DependentUpon>frmEdicaoLocacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Edicao\frmEdicaoUsuarios.resx">
+      <DependentUpon>frmEdicaoUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Edicao\frmEdicaoLivroAutor.resx">
+      <DependentUpon>frmEdicaoLivroAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Edicao\frmLivroAutores.resx">
+      <DependentUpon>frmLivroAutores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmAutores.resx">
       <DependentUpon>frmAutores.cs</DependentUpon>

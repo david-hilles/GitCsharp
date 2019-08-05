@@ -16,5 +16,22 @@ namespace MVCProject.View.Edicao
         {
             InitializeComponent();
         }
+        public MVCProject.SistemaBibliotecaDBDataSet.GenerosRow GenerosRow;
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            GenerosRow.Tipo = textBox1.Text;
+            GenerosRow.Descricao = textBox2.Text;
+
+            this.Close();
+
+        }
+
+        private void FrmEdicaoGeneros_Load(object sender, EventArgs e)
+        {
+            textBox1.Text = GenerosRow.Tipo;
+            textBox2.Text = GenerosRow.Descricao;
+
+        }
     }
 }

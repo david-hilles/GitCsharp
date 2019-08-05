@@ -1,4 +1,5 @@
 ﻿using MVCProject.View.Adicionar;
+using MVCProject.View.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +30,46 @@ namespace MVCProject.View
         {
             frmAdicionarAutores NovaTela =  new frmAdicionarAutores();
             NovaTela.ShowDialog();
+
+            if (!string.IsNullOrEmpty(NovaTela.AutorRow?.Nome))
+                this.autoresTableAdapter.Insert(
+                    NovaTela.AutorRow.Nome,
+                    NovaTela.AutorRow.Descricao
+                    );
+
+            this.autoresTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Autores);
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            var autorSelect = ((System.Data.DataRowView)
+            this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
+            as MVCProject.SistemaBibliotecaDBDataSet.AutoresRow;
+
+            switch(e.ColumnIndex)
+            {
+                case 0:
+                    {
+                        this.autoresTableAdapter.DeleteQuery(autorSelect.Id);
+                    }
+                    break;
+                case 1:
+                    {
+                        frmEdicaoAutores editAutor = new frmEdicaoAutores();
+                        editAutor.AutoresRow = autorSelect;
+                        editAutor.ShowDialog();
+
+                        this.autoresTableAdapter.UpdateQuery(
+                            editAutor.AutoresRow.Nome,
+                            editAutor.AutoresRow.Descricao,
+                            editAutor.AutoresRow.Id);
+
+                    }
+                    break;
+
+            }
+            this.autoresTableAdapter.CustomQuery(this.sistemaBibliotecaDBDataSet.Autores);
 
         }
     }

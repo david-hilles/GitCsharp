@@ -1,4 +1,5 @@
 ﻿using MVCProject.View.Adicionar;
+using MVCProject.View.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +30,51 @@ namespace MVCProject.View
         {
             frmAdicionarGeneros NovaTela = new frmAdicionarGeneros();
             NovaTela.ShowDialog();
+
+            if (!string.IsNullOrEmpty(NovaTela.GeneroRow?.Tipo))
+                this.generosTableAdapter.Insert(
+                    NovaTela.GeneroRow.Tipo,
+                    NovaTela.GeneroRow.Descricao
+                    );
+
+            this.generosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Generos);
+
+
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            var generosSelect = ((System.Data.DataRowView)
+            this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
+            as MVCProject.SistemaBibliotecaDBDataSet.GenerosRow;
+
+            switch (e.ColumnIndex)
+            {
+                case 0:
+                    {
+                        this.generosTableAdapter.DeleteQuery(generosSelect.Id);
+                    }
+                    break;
+                case 1:
+                    {
+                        frmEdicaoGeneros editGeneros = new frmEdicaoGeneros();
+                        editGeneros.GenerosRow = generosSelect;
+                        editGeneros.ShowDialog();
+
+                        this.generosTableAdapter.UpdateQuery(
+                            editGeneros.GenerosRow.Tipo,
+                            editGeneros.GenerosRow.Descricao,
+                            editGeneros.GenerosRow.Id);
+
+                    }
+                    break;
+
+            }
+            this.generosTableAdapter.CustomQuery(this.sistemaBibliotecaDBDataSet.Generos);
+
+
+
         }
     }
 }
