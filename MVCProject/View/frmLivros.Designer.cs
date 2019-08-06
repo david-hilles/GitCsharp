@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLivros));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.livrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
-            this.livrosTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.LivrosTableAdapter();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.EditorasNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GeneroTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.registroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tItuloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +49,9 @@
             this.usuAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.livrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
+            this.livrosTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.LivrosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.livrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
@@ -63,6 +66,8 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Delete,
             this.Editar,
+            this.EditorasNome,
+            this.GeneroTipo,
             this.idDataGridViewTextBoxColumn,
             this.registroDataGridViewTextBoxColumn,
             this.tItuloDataGridViewTextBoxColumn,
@@ -82,33 +87,9 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(734, 295);
+            this.dataGridView1.Size = new System.Drawing.Size(883, 295);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(70, 38);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(641, 56);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "ADICIONAR";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // livrosBindingSource
-            // 
-            this.livrosBindingSource.DataMember = "Livros";
-            this.livrosBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
-            // 
-            // sistemaBibliotecaDBDataSet
-            // 
-            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
-            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // livrosTableAdapter
-            // 
-            this.livrosTableAdapter.ClearBeforeFill = true;
             // 
             // Delete
             // 
@@ -129,6 +110,36 @@
             this.Editar.Name = "Editar";
             this.Editar.ReadOnly = true;
             this.Editar.Width = 125;
+            // 
+            // EditorasNome
+            // 
+            this.EditorasNome.DataPropertyName = "Editoras.Nome";
+            this.EditorasNome.HeaderText = "Editoras.Nome";
+            this.EditorasNome.MinimumWidth = 6;
+            this.EditorasNome.Name = "EditorasNome";
+            this.EditorasNome.ReadOnly = true;
+            this.EditorasNome.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EditorasNome.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.EditorasNome.Width = 125;
+            // 
+            // GeneroTipo
+            // 
+            this.GeneroTipo.DataPropertyName = "GenerosTipo";
+            this.GeneroTipo.HeaderText = "GeneroTipo";
+            this.GeneroTipo.MinimumWidth = 6;
+            this.GeneroTipo.Name = "GeneroTipo";
+            this.GeneroTipo.ReadOnly = true;
+            this.GeneroTipo.Width = 125;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(240, 29);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(433, 56);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "ADICIONAR";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -247,11 +258,27 @@
             this.datAltDataGridViewTextBoxColumn.ReadOnly = true;
             this.datAltDataGridViewTextBoxColumn.Width = 125;
             // 
+            // livrosBindingSource
+            // 
+            this.livrosBindingSource.DataMember = "Livros";
+            this.livrosBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
+            // 
+            // sistemaBibliotecaDBDataSet
+            // 
+            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
+            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // livrosTableAdapter
+            // 
+            this.livrosTableAdapter.ClearBeforeFill = true;
+            // 
             // frmLivros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(948, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmLivros";
@@ -273,6 +300,8 @@
         private SistemaBibliotecaDBDataSetTableAdapters.LivrosTableAdapter livrosTableAdapter;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EditorasNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GeneroTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn registroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tItuloDataGridViewTextBoxColumn;

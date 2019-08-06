@@ -53,11 +53,6 @@ namespace MVCProject.View
             {
                 case 0:
                     {
-                        this.generosTableAdapter.DeleteQuery(generosSelect.Id);
-                    }
-                    break;
-                case 1:
-                    {
                         frmEdicaoGeneros editGeneros = new frmEdicaoGeneros();
                         editGeneros.GenerosRow = generosSelect;
                         editGeneros.ShowDialog();
@@ -67,8 +62,10 @@ namespace MVCProject.View
                             editGeneros.GenerosRow.Descricao,
                             editGeneros.GenerosRow.Id);
 
+                        //this.generosTableAdapter.DeleteQuery(generosSelect.Id);
                     }
                     break;
+
 
             }
             this.generosTableAdapter.CustomQuery(this.sistemaBibliotecaDBDataSet.Generos);

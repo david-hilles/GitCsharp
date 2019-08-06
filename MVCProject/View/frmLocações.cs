@@ -22,7 +22,7 @@ namespace MVCProject.View
         private void FrmLocações_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'sistemaBibliotecaDBDataSet.Locacao'. Você pode movê-la ou removê-la conforme necessário.
-            this.locacaoTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Locacao);
+            this.locacaoTableAdapter.CustomQuery(this.sistemaBibliotecaDBDataSet.Locacao);
 
         }
 
@@ -30,7 +30,7 @@ namespace MVCProject.View
         {
             frmAdicionarLocacoes NovaTela = new frmAdicionarLocacoes();
             NovaTela.ShowDialog();
-          
+
             if (!string.IsNullOrEmpty(NovaTela.locacaoRow?.Usuario.ToString()))
                 this.locacaoTableAdapter.Insert(
                     NovaTela.locacaoRow.Livro,
@@ -43,9 +43,9 @@ namespace MVCProject.View
                     DateTime.Now,
                     DateTime.Now
                     );
-          
-            this.locacaoTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Locacao);
-          
+
+            this.locacaoTableAdapter.CustomQuery(this.sistemaBibliotecaDBDataSet.Locacao);
+
 
 
         }
@@ -59,7 +59,7 @@ namespace MVCProject.View
 
             switch (e.ColumnIndex)
             {
-                                case 0:
+                case 0:
                     {
                         this.locacaoTableAdapter.DeleteQuery(locacaoSelect.Id);
                     }

@@ -22,8 +22,8 @@ namespace MVCProject.View
         private void FrmLivros_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'sistemaBibliotecaDBDataSet.Livros'. Você pode movê-la ou removê-la conforme necessário.
-            this.livrosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Livros);
-
+            // this.livrosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Livros);
+            this.livrosTableAdapter.EditorasGenerosNome(this.sistemaBibliotecaDBDataSet.Livros);
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -39,6 +39,7 @@ namespace MVCProject.View
                     {
 
                         this.livrosTableAdapter.DeleteQuery(livrosSelect.Id);
+
                     }
                     break;
                 case 1:
@@ -67,8 +68,8 @@ namespace MVCProject.View
                     break;
 
             }
-            this.livrosTableAdapter.CustomQuerys(this.sistemaBibliotecaDBDataSet.Livros);
-
+            //this.livrosTableAdapter.CustomQuerys(this.sistemaBibliotecaDBDataSet.Livros);
+            this.livrosTableAdapter.EditorasGenerosNome(this.sistemaBibliotecaDBDataSet.Livros);
 
         }
 
@@ -91,11 +92,11 @@ namespace MVCProject.View
                     NovaTela.livrosRow.UsuAlt,
                     DateTime.Now,
                     DateTime.Now
+                 );
 
-                    );
-
-            this.livrosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Livros);
-
+            this.livrosTableAdapter.EditorasGenerosNome(this.sistemaBibliotecaDBDataSet.Livros);
         }
+
+
     }
 }

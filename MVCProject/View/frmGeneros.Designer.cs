@@ -34,7 +34,6 @@
             this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
             this.button1 = new System.Windows.Forms.Button();
             this.generosTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.GenerosTableAdapter();
-            this.Deleta = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,7 +50,6 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Deleta,
             this.Editar,
             this.idDataGridViewTextBoxColumn,
             this.tipoDataGridViewTextBoxColumn,
@@ -91,15 +89,6 @@
             // generosTableAdapter
             // 
             this.generosTableAdapter.ClearBeforeFill = true;
-            // 
-            // Deleta
-            // 
-            this.Deleta.DataPropertyName = "DeleteCommand";
-            this.Deleta.HeaderText = "Deletar";
-            this.Deleta.MinimumWidth = 6;
-            this.Deleta.Name = "Deleta";
-            this.Deleta.ReadOnly = true;
-            this.Deleta.Width = 125;
             // 
             // Editar
             // 
@@ -162,7 +151,6 @@
         private SistemaBibliotecaDBDataSet sistemaBibliotecaDBDataSet;
         private System.Windows.Forms.BindingSource generosBindingSource;
         private SistemaBibliotecaDBDataSetTableAdapters.GenerosTableAdapter generosTableAdapter;
-        private System.Windows.Forms.DataGridViewButtonColumn Deleta;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;

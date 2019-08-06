@@ -41,23 +41,23 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.generosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.editorasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
-            this.generosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.generosTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.GenerosTableAdapter();
-            this.editorasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.editorasTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.EditorasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.generosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.editorasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(84, 397);
+            this.button1.Location = new System.Drawing.Point(73, 347);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(198, 72);
             this.button1.TabIndex = 0;
@@ -161,6 +161,16 @@
             this.comboBox1.TabIndex = 11;
             this.comboBox1.ValueMember = "Id";
             // 
+            // generosBindingSource
+            // 
+            this.generosBindingSource.DataMember = "Generos";
+            this.generosBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
+            // 
+            // sistemaBibliotecaDBDataSet
+            // 
+            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
+            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // comboBox2
             // 
             this.comboBox2.DataSource = this.editorasBindingSource;
@@ -171,6 +181,11 @@
             this.comboBox2.Size = new System.Drawing.Size(121, 24);
             this.comboBox2.TabIndex = 12;
             this.comboBox2.ValueMember = "Id";
+            // 
+            // editorasBindingSource
+            // 
+            this.editorasBindingSource.DataMember = "Editoras";
+            this.editorasBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
             // 
             // textBox3
             // 
@@ -186,24 +201,9 @@
             this.textBox4.Size = new System.Drawing.Size(100, 22);
             this.textBox4.TabIndex = 14;
             // 
-            // sistemaBibliotecaDBDataSet
-            // 
-            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
-            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // generosBindingSource
-            // 
-            this.generosBindingSource.DataMember = "Generos";
-            this.generosBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
-            // 
             // generosTableAdapter
             // 
             this.generosTableAdapter.ClearBeforeFill = true;
-            // 
-            // editorasBindingSource
-            // 
-            this.editorasBindingSource.DataMember = "Editoras";
-            this.editorasBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
             // 
             // editorasTableAdapter
             // 
@@ -233,8 +233,8 @@
             this.Text = "frmAdicionarLivros";
             this.Load += new System.EventHandler(this.FrmAdicionarLivros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.generosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.editorasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

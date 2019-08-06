@@ -565,8 +565,6 @@ namespace MVCProject {
             
             private global::System.Data.DataColumn columnDescricao;
             
-            private global::System.Data.DataColumn columnDeleteCommand;
-            
             private global::System.Data.DataColumn columnEditCommand;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -628,14 +626,6 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DeleteCommandColumn {
-                get {
-                    return this.columnDeleteCommand;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn EditCommandColumn {
                 get {
                     return this.columnEditCommand;
@@ -679,13 +669,12 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AutoresRow AddAutoresRow(string Nome, string Descricao, string DeleteCommand, string EditCommand) {
+            public AutoresRow AddAutoresRow(string Nome, string Descricao, string EditCommand) {
                 AutoresRow rowAutoresRow = ((AutoresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Nome,
                         Descricao,
-                        DeleteCommand,
                         EditCommand};
                 rowAutoresRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAutoresRow);
@@ -719,7 +708,6 @@ namespace MVCProject {
                 this.columnId = base.Columns["Id"];
                 this.columnNome = base.Columns["Nome"];
                 this.columnDescricao = base.Columns["Descricao"];
-                this.columnDeleteCommand = base.Columns["DeleteCommand"];
                 this.columnEditCommand = base.Columns["EditCommand"];
             }
             
@@ -732,8 +720,6 @@ namespace MVCProject {
                 base.Columns.Add(this.columnNome);
                 this.columnDescricao = new global::System.Data.DataColumn("Descricao", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescricao);
-                this.columnDeleteCommand = new global::System.Data.DataColumn("DeleteCommand", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDeleteCommand);
                 this.columnEditCommand = new global::System.Data.DataColumn("EditCommand", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEditCommand);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -748,7 +734,6 @@ namespace MVCProject {
                 this.columnNome.MaxLength = 100;
                 this.columnDescricao.AllowDBNull = false;
                 this.columnDescricao.MaxLength = 1000;
-                this.columnDeleteCommand.DefaultValue = ((string)("Deletar"));
                 this.columnEditCommand.DefaultValue = ((string)("Editar"));
             }
             
@@ -889,8 +874,6 @@ namespace MVCProject {
             
             private global::System.Data.DataColumn columnDescricao;
             
-            private global::System.Data.DataColumn columnDeleteCommand;
-            
             private global::System.Data.DataColumn columnEditCommand;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -952,14 +935,6 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DeleteCommandColumn {
-                get {
-                    return this.columnDeleteCommand;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn EditCommandColumn {
                 get {
                     return this.columnEditCommand;
@@ -1003,13 +978,12 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EditorasRow AddEditorasRow(string Nome, string Descricao, string DeleteCommand, string EditCommand) {
+            public EditorasRow AddEditorasRow(string Nome, string Descricao, string EditCommand) {
                 EditorasRow rowEditorasRow = ((EditorasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Nome,
                         Descricao,
-                        DeleteCommand,
                         EditCommand};
                 rowEditorasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEditorasRow);
@@ -1043,7 +1017,6 @@ namespace MVCProject {
                 this.columnId = base.Columns["Id"];
                 this.columnNome = base.Columns["Nome"];
                 this.columnDescricao = base.Columns["Descricao"];
-                this.columnDeleteCommand = base.Columns["DeleteCommand"];
                 this.columnEditCommand = base.Columns["EditCommand"];
             }
             
@@ -1056,8 +1029,6 @@ namespace MVCProject {
                 base.Columns.Add(this.columnNome);
                 this.columnDescricao = new global::System.Data.DataColumn("Descricao", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescricao);
-                this.columnDeleteCommand = new global::System.Data.DataColumn("DeleteCommand", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDeleteCommand);
                 this.columnEditCommand = new global::System.Data.DataColumn("EditCommand", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEditCommand);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -1072,7 +1043,6 @@ namespace MVCProject {
                 this.columnNome.MaxLength = 200;
                 this.columnDescricao.AllowDBNull = false;
                 this.columnDescricao.MaxLength = 1000;
-                this.columnDeleteCommand.DefaultValue = ((string)("Deletar"));
                 this.columnEditCommand.DefaultValue = ((string)("Editar"));
             }
             
@@ -1213,8 +1183,6 @@ namespace MVCProject {
             
             private global::System.Data.DataColumn columnDescricao;
             
-            private global::System.Data.DataColumn columnDeleteCommand;
-            
             private global::System.Data.DataColumn columnEditCommand;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1276,14 +1244,6 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DeleteCommandColumn {
-                get {
-                    return this.columnDeleteCommand;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn EditCommandColumn {
                 get {
                     return this.columnEditCommand;
@@ -1327,13 +1287,12 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public GenerosRow AddGenerosRow(string Tipo, string Descricao, string DeleteCommand, string EditCommand) {
+            public GenerosRow AddGenerosRow(string Tipo, string Descricao, string EditCommand) {
                 GenerosRow rowGenerosRow = ((GenerosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Tipo,
                         Descricao,
-                        DeleteCommand,
                         EditCommand};
                 rowGenerosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowGenerosRow);
@@ -1367,7 +1326,6 @@ namespace MVCProject {
                 this.columnId = base.Columns["Id"];
                 this.columnTipo = base.Columns["Tipo"];
                 this.columnDescricao = base.Columns["Descricao"];
-                this.columnDeleteCommand = base.Columns["DeleteCommand"];
                 this.columnEditCommand = base.Columns["EditCommand"];
             }
             
@@ -1380,8 +1338,6 @@ namespace MVCProject {
                 base.Columns.Add(this.columnTipo);
                 this.columnDescricao = new global::System.Data.DataColumn("Descricao", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescricao);
-                this.columnDeleteCommand = new global::System.Data.DataColumn("DeleteCommand", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDeleteCommand);
                 this.columnEditCommand = new global::System.Data.DataColumn("EditCommand", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEditCommand);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -1395,7 +1351,6 @@ namespace MVCProject {
                 this.columnTipo.AllowDBNull = false;
                 this.columnTipo.MaxLength = 200;
                 this.columnDescricao.MaxLength = 1000;
-                this.columnDeleteCommand.DefaultValue = ((string)("Deletar"));
                 this.columnEditCommand.DefaultValue = ((string)("Editar"));
             }
             
@@ -1534,8 +1489,6 @@ namespace MVCProject {
             
             private global::System.Data.DataColumn columnAutor;
             
-            private global::System.Data.DataColumn columnDeleteCommand;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LivroAutorDataTable() {
@@ -1587,14 +1540,6 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DeleteCommandColumn {
-                get {
-                    return this.columnDeleteCommand;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1630,12 +1575,11 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LivroAutorRow AddLivroAutorRow(LivrosRow parentLivrosRowByFK_LivroAutor_Livros, LivrosRow parentLivrosRowByFK_LivroAutor_Autores, string DeleteCommand) {
+            public LivroAutorRow AddLivroAutorRow(LivrosRow parentLivrosRowByFK_LivroAutor_Livros, LivrosRow parentLivrosRowByFK_LivroAutor_Autores) {
                 LivroAutorRow rowLivroAutorRow = ((LivroAutorRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        null,
-                        DeleteCommand};
+                        null};
                 if ((parentLivrosRowByFK_LivroAutor_Livros != null)) {
                     columnValuesArray[0] = parentLivrosRowByFK_LivroAutor_Livros[0];
                 }
@@ -1666,7 +1610,6 @@ namespace MVCProject {
             internal void InitVars() {
                 this.columnLivro = base.Columns["Livro"];
                 this.columnAutor = base.Columns["Autor"];
-                this.columnDeleteCommand = base.Columns["DeleteCommand"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1676,11 +1619,8 @@ namespace MVCProject {
                 base.Columns.Add(this.columnLivro);
                 this.columnAutor = new global::System.Data.DataColumn("Autor", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAutor);
-                this.columnDeleteCommand = new global::System.Data.DataColumn("DeleteCommand", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDeleteCommand);
                 this.columnLivro.AllowDBNull = false;
                 this.columnAutor.AllowDBNull = false;
-                this.columnDeleteCommand.DefaultValue = ((string)("Deletar"));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1844,6 +1784,10 @@ namespace MVCProject {
             
             private global::System.Data.DataColumn columnEditCommand;
             
+            private global::System.Data.DataColumn _columnEditoras_Nome;
+            
+            private global::System.Data.DataColumn _columnGeneros_Tipo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LivrosDataTable() {
@@ -1999,6 +1943,22 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Editoras_NomeColumn {
+                get {
+                    return this._columnEditoras_Nome;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Generos_TipoColumn {
+                get {
+                    return this._columnGeneros_Tipo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2034,7 +1994,23 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LivrosRow AddLivrosRow(int Registro, string TItulo, string Isbn, GenerosRow parentGenerosRowByFK_Livros_To_Genero, EditorasRow parentEditorasRowByFK_Livros_To_Editora, string Sinopse, string Observacoes, bool Ativo, UsuariosRow parentUsuariosRowByFK_Livros_To_UsuarioInc, UsuariosRow parentUsuariosRowByFK_Livros_To_UsuarioAlt, System.DateTime DatInc, System.DateTime DatAlt, string DeleteCommand, string EditCommand) {
+            public LivrosRow AddLivrosRow(
+                        int Registro, 
+                        string TItulo, 
+                        string Isbn, 
+                        GenerosRow parentGenerosRowByFK_Livros_To_Genero, 
+                        EditorasRow parentEditorasRowByFK_Livros_To_Editora, 
+                        string Sinopse, 
+                        string Observacoes, 
+                        bool Ativo, 
+                        UsuariosRow parentUsuariosRowByFK_Livros_To_UsuarioInc, 
+                        UsuariosRow parentUsuariosRowByFK_Livros_To_UsuarioAlt, 
+                        System.DateTime DatInc, 
+                        System.DateTime DatAlt, 
+                        string DeleteCommand, 
+                        string EditCommand, 
+                        string _Editoras_Nome, 
+                        string _Generos_Tipo) {
                 LivrosRow rowLivrosRow = ((LivrosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2051,7 +2027,9 @@ namespace MVCProject {
                         DatInc,
                         DatAlt,
                         DeleteCommand,
-                        EditCommand};
+                        EditCommand,
+                        _Editoras_Nome,
+                        _Generos_Tipo};
                 if ((parentGenerosRowByFK_Livros_To_Genero != null)) {
                     columnValuesArray[4] = parentGenerosRowByFK_Livros_To_Genero[0];
                 }
@@ -2108,6 +2086,8 @@ namespace MVCProject {
                 this.columnDatAlt = base.Columns["DatAlt"];
                 this.columnDeleteCommand = base.Columns["DeleteCommand"];
                 this.columnEditCommand = base.Columns["EditCommand"];
+                this._columnEditoras_Nome = base.Columns["Editoras.Nome"];
+                this._columnGeneros_Tipo = base.Columns["Generos.Tipo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2143,6 +2123,14 @@ namespace MVCProject {
                 base.Columns.Add(this.columnDeleteCommand);
                 this.columnEditCommand = new global::System.Data.DataColumn("EditCommand", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEditCommand);
+                this._columnEditoras_Nome = new global::System.Data.DataColumn("Editoras.Nome", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnEditoras_Nome.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnEditoras_Nome");
+                this._columnEditoras_Nome.ExtendedProperties.Add("Generator_UserColumnName", "Editoras.Nome");
+                base.Columns.Add(this._columnEditoras_Nome);
+                this._columnGeneros_Tipo = new global::System.Data.DataColumn("Generos.Tipo", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnGeneros_Tipo.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnGeneros_Tipo");
+                this._columnGeneros_Tipo.ExtendedProperties.Add("Generator_UserColumnName", "Generos.Tipo");
+                base.Columns.Add(this._columnGeneros_Tipo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -3212,22 +3200,6 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string DeleteCommand {
-                get {
-                    try {
-                        return ((string)(this[this.tableAutores.DeleteCommandColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'DeleteCommand\' na tabela \'Autores\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAutores.DeleteCommandColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string EditCommand {
                 get {
                     try {
@@ -3240,18 +3212,6 @@ namespace MVCProject {
                 set {
                     this[this.tableAutores.EditCommandColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDeleteCommandNull() {
-                return this.IsNull(this.tableAutores.DeleteCommandColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDeleteCommandNull() {
-                this[this.tableAutores.DeleteCommandColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3316,22 +3276,6 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string DeleteCommand {
-                get {
-                    try {
-                        return ((string)(this[this.tableEditoras.DeleteCommandColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'DeleteCommand\' na tabela \'Editoras\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableEditoras.DeleteCommandColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string EditCommand {
                 get {
                     try {
@@ -3344,18 +3288,6 @@ namespace MVCProject {
                 set {
                     this[this.tableEditoras.EditCommandColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDeleteCommandNull() {
-                return this.IsNull(this.tableEditoras.DeleteCommandColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDeleteCommandNull() {
-                this[this.tableEditoras.DeleteCommandColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3436,22 +3368,6 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string DeleteCommand {
-                get {
-                    try {
-                        return ((string)(this[this.tableGeneros.DeleteCommandColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'DeleteCommand\' na tabela \'Generos\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGeneros.DeleteCommandColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string EditCommand {
                 get {
                     try {
@@ -3476,18 +3392,6 @@ namespace MVCProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDescricaoNull() {
                 this[this.tableGeneros.DescricaoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDeleteCommandNull() {
-                return this.IsNull(this.tableGeneros.DeleteCommandColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDeleteCommandNull() {
-                this[this.tableGeneros.DeleteCommandColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3552,22 +3456,6 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string DeleteCommand {
-                get {
-                    try {
-                        return ((string)(this[this.tableLivroAutor.DeleteCommandColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("O valor da coluna \'DeleteCommand\' na tabela \'LivroAutor\' é DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableLivroAutor.DeleteCommandColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LivrosRow LivrosRowByFK_LivroAutor_Autores {
                 get {
                     return ((LivrosRow)(this.GetParentRow(this.Table.ParentRelations["FK_LivroAutor_Autores"])));
@@ -3586,18 +3474,6 @@ namespace MVCProject {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_LivroAutor_Livros"]);
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDeleteCommandNull() {
-                return this.IsNull(this.tableLivroAutor.DeleteCommandColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDeleteCommandNull() {
-                this[this.tableLivroAutor.DeleteCommandColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3802,6 +3678,38 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string _Editoras_Nome {
+                get {
+                    try {
+                        return ((string)(this[this.tableLivros._Editoras_NomeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Editoras.Nome\' na tabela \'Livros\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLivros._Editoras_NomeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string _Generos_Tipo {
+                get {
+                    try {
+                        return ((string)(this[this.tableLivros._Generos_TipoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Generos.Tipo\' na tabela \'Livros\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLivros._Generos_TipoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public EditorasRow EditorasRow {
                 get {
                     return ((EditorasRow)(this.GetParentRow(this.Table.ParentRelations["FK_Livros_To_Editora"])));
@@ -3890,6 +3798,30 @@ namespace MVCProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetEditCommandNull() {
                 this[this.tableLivros.EditCommandColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Editoras_NomeNull() {
+                return this.IsNull(this.tableLivros._Editoras_NomeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Editoras_NomeNull() {
+                this[this.tableLivros._Editoras_NomeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Generos_TipoNull() {
+                return this.IsNull(this.tableLivros._Generos_TipoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Generos_TipoNull() {
+                this[this.tableLivros._Generos_TipoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4793,7 +4725,7 @@ namespace MVCProject.SistemaBibliotecaDBDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Nome, Descricao FROM Autores";
@@ -4804,17 +4736,12 @@ namespace MVCProject.SistemaBibliotecaDBDataSetTableAdapters {
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "DELETE FROM [dbo].[Autores] WHERE ([Id] = @Original_Id)";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "UPDATE [dbo].[Autores] SET [Nome] = @Nome, [Descricao] = @Descricao WHERE ([Id] =" +
+            this._commandCollection[2].CommandText = "UPDATE [dbo].[Autores] SET [Nome] = @Nome, [Descricao] = @Descricao WHERE ([Id] =" +
                 " @Original_Id)";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descricao", global::System.Data.SqlDbType.VarChar, 1000, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descricao", global::System.Data.SqlDbType.VarChar, 1000, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5019,33 +4946,9 @@ namespace MVCProject.SistemaBibliotecaDBDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteQuery(int Original_Id) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
-            command.Parameters[0].Value = ((int)(Original_Id));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery(string Nome, string Descricao, int Original_Id) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((Nome == null)) {
                 throw new global::System.ArgumentNullException("Nome");
             }
@@ -5241,28 +5144,23 @@ namespace MVCProject.SistemaBibliotecaDBDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Nome, Descricao FROM dbo.Editoras";
+            this._commandCollection[0].CommandText = "SELECT Id, Nome, Descricao FROM Editoras";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Id, Nome, Descricao FROM dbo.Editoras";
+            this._commandCollection[1].CommandText = "SELECT Id, Nome, Descricao FROM Editoras";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "DELETE FROM [dbo].[Editoras] WHERE ([Id] = @Original_Id)";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "UPDATE [dbo].[Editoras] SET [Nome] = @Nome, [Descricao] = @Descricao WHERE ([Id] " +
+            this._commandCollection[2].CommandText = "UPDATE [dbo].[Editoras] SET [Nome] = @Nome, [Descricao] = @Descricao WHERE ([Id] " +
                 "= @Original_Id)\r\n";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descricao", global::System.Data.SqlDbType.VarChar, 1000, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descricao", global::System.Data.SqlDbType.VarChar, 1000, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5467,33 +5365,9 @@ namespace MVCProject.SistemaBibliotecaDBDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteQuery(int Original_Id) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
-            command.Parameters[0].Value = ((int)(Original_Id));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery(string Nome, string Descricao, int Original_Id) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((Nome == null)) {
                 throw new global::System.ArgumentNullException("Nome");
             }
@@ -5691,28 +5565,23 @@ SELECT Id, Tipo, Descricao FROM Generos WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Tipo, Descricao FROM dbo.Generos";
+            this._commandCollection[0].CommandText = "SELECT Id, Tipo, Descricao FROM Generos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Id, Tipo, Descricao FROM dbo.Generos";
+            this._commandCollection[1].CommandText = "SELECT Id, Tipo, Descricao FROM Generos";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "DELETE FROM [dbo].[Generos] WHERE ([Id] = @Original_Id)";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "UPDATE [dbo].[Generos] SET [Tipo] = @Tipo, [Descricao] = @Descricao WHERE ([Id] =" +
+            this._commandCollection[2].CommandText = "UPDATE [dbo].[Generos] SET [Tipo] = @Tipo, [Descricao] = @Descricao WHERE ([Id] =" +
                 " @Original_Id)";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tipo", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descricao", global::System.Data.SqlDbType.VarChar, 1000, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tipo", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descricao", global::System.Data.SqlDbType.VarChar, 1000, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5921,33 +5790,9 @@ SELECT Id, Tipo, Descricao FROM Generos WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteQuery(int Original_Id) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
-            command.Parameters[0].Value = ((int)(Original_Id));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery(string Tipo, string Descricao, int Original_Id) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((Tipo == null)) {
                 throw new global::System.ArgumentNullException("Tipo");
             }
@@ -6121,22 +5966,15 @@ SELECT Id, Tipo, Descricao FROM Generos WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Livro, Autor FROM dbo.LivroAutor";
+            this._commandCollection[0].CommandText = "SELECT Livro, Autor FROM LivroAutor";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Livro, Autor FROM dbo.LivroAutor";
+            this._commandCollection[1].CommandText = "SELECT Livro, Autor FROM LivroAutor";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "DELETE FROM [dbo].[LivroAutor] WHERE ([Livro] = @Original_Livro) AND ([Autor] = @" +
-                "Original_Autor)";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Livro", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Livro", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Autor", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Autor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6237,31 +6075,6 @@ SELECT Id, Tipo, Descricao FROM Generos WHERE (Id = @Id)";
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteQuery(int Original_Livro, int Original_Autor) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
-            command.Parameters[0].Value = ((int)(Original_Livro));
-            command.Parameters[1].Value = ((int)(Original_Autor));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
         }
     }
     
@@ -6399,6 +6212,8 @@ SELECT Id, Tipo, Descricao FROM Generos WHERE (Id = @Id)";
             tableMapping.ColumnMappings.Add("UsuAlt", "UsuAlt");
             tableMapping.ColumnMappings.Add("DatInc", "DatInc");
             tableMapping.ColumnMappings.Add("DatAlt", "DatAlt");
+            tableMapping.ColumnMappings.Add("Editoras.Nome", "Editoras.Nome");
+            tableMapping.ColumnMappings.Add("Generos.Tipo", "Generos.Tipo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -6477,7 +6292,7 @@ SELECT Id, Registro, TItulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Registro, TItulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo, " +
@@ -6490,26 +6305,35 @@ SELECT Id, Registro, TItulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "DELETE FROM [dbo].[Livros] WHERE ([Id] = @Original_Id)";
+            this._commandCollection[2].CommandText = "UPDATE [dbo].[Livros] set\r\n[Ativo] = 0\r\nWHERE ([Id] = @Original_Id)\r\n";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"UPDATE [dbo].[Livros] SET [Registro] = @Registro, [TItulo] = @TItulo, [Isbn] = @Isbn, [Genero] = @Genero, [Editora] = @Editora, [Sinopse] = @Sinopse, [Observacoes] = @Observacoes, [Ativo] = @Ativo, [UsuInc] = @UsuInc, [UsuAlt] = @UsuAlt, [DatInc] = @DatInc, [DatAlt] = @DatAlt WHERE ([Id] = @Original_Id)";
+            this._commandCollection[3].CommandText = @"SELECT Livros.Id, Livros.Registro, Livros.TItulo, Livros.Isbn, Livros.Genero, Livros.Editora, Livros.Sinopse, Livros.Observacoes, Livros.Ativo, Livros.UsuInc, Livros.UsuAlt, Livros.DatInc, Livros.DatAlt, Editoras.Nome AS 'Editoras.nome', 
+                  Generos.Tipo AS 'GenerosTipo'
+FROM     Livros INNER JOIN
+                  Editoras ON Livros.Editora = Editoras.Id INNER JOIN
+                  Generos ON Livros.Genero = Generos.Id
+WHERE (Livros.Ativo = 1)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Registro", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Registro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TItulo", global::System.Data.SqlDbType.VarChar, 1200, global::System.Data.ParameterDirection.Input, 0, 0, "TItulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Isbn", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "Isbn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Genero", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Genero", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Editora", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Editora", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sinopse", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Sinopse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Observacoes", global::System.Data.SqlDbType.VarChar, 1000, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ativo", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Ativo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UsuInc", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UsuInc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UsuAlt", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UsuAlt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DatInc", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DatInc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DatAlt", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DatAlt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"UPDATE [dbo].[Livros] SET [Registro] = @Registro, [TItulo] = @TItulo, [Isbn] = @Isbn, [Genero] = @Genero, [Editora] = @Editora, [Sinopse] = @Sinopse, [Observacoes] = @Observacoes, [Ativo] = @Ativo, [UsuInc] = @UsuInc, [UsuAlt] = @UsuAlt, [DatInc] = @DatInc, [DatAlt] = @DatAlt WHERE ([Id] = @Original_Id)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Registro", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Registro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TItulo", global::System.Data.SqlDbType.VarChar, 1200, global::System.Data.ParameterDirection.Input, 0, 0, "TItulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Isbn", global::System.Data.SqlDbType.VarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "Isbn", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Genero", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Genero", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Editora", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Editora", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sinopse", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Sinopse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Observacoes", global::System.Data.SqlDbType.VarChar, 1000, global::System.Data.ParameterDirection.Input, 0, 0, "Observacoes", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ativo", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Ativo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UsuInc", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UsuInc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UsuAlt", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UsuAlt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DatInc", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DatInc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DatAlt", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "DatAlt", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6555,6 +6379,30 @@ SELECT Id, Registro, TItulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual SistemaBibliotecaDBDataSet.LivrosDataTable GetDataBy1() {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            SistemaBibliotecaDBDataSet.LivrosDataTable dataTable = new SistemaBibliotecaDBDataSet.LivrosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int EditorasGenerosNome(SistemaBibliotecaDBDataSet.LivrosDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SistemaBibliotecaDBDataSet.LivrosDataTable GetDataBy3() {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             SistemaBibliotecaDBDataSet.LivrosDataTable dataTable = new SistemaBibliotecaDBDataSet.LivrosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -6861,7 +6709,7 @@ SELECT Id, Registro, TItulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery(int Registro, string TItulo, string Isbn, int Genero, int Editora, string Sinopse, string Observacoes, bool Ativo, int UsuInc, int UsuAlt, System.DateTime DatInc, System.DateTime DatAlt, int Original_Id) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             command.Parameters[0].Value = ((int)(Registro));
             if ((TItulo == null)) {
                 throw new global::System.ArgumentNullException("TItulo");
@@ -7123,7 +6971,7 @@ SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DataInc, Data
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "DELETE FROM [dbo].[Locacao] WHERE ([Id] = @Original_Id)";
+            this._commandCollection[2].CommandText = "UPDATE [dbo].[Locacao] set Ativo = 0 WHERE ([Id] = @Original_Id)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
