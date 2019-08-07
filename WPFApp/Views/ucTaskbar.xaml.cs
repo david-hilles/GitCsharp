@@ -159,6 +159,8 @@ namespace WPFApp.Views
 
         private void Button_Click_15(object sender, RoutedEventArgs e)
         {
+
+         
             if (operacao == "*" || operacao == "+" || operacao == "-")
             {
                 operacao = "/";
