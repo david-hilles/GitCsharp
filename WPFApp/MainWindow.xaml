@@ -10,5 +10,6 @@
     <Grid >
         <y:ucLogin x:Name="ucLoginForm" loginCorrect="UcLoginForm_loginCorrect"></y:ucLogin>
         <y:ucTaskbar x:Name="ucTaskForm" Visibility="Hidden"></y:ucTaskbar>
+        
     </Grid>
 </Window>

@@ -7,8 +7,115 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FFAAF0B8" Offset="0.17"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="151*"/>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="44*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="36*"/>
+            <RowDefinition Height="138*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="251*"/>
+            <ColumnDefinition Width="65*"/>
+            <ColumnDefinition Width="46*"/>
+            <ColumnDefinition Width="46*"/>
+            <ColumnDefinition Width="47*"/>
+            <ColumnDefinition Width="345*"/>
+        </Grid.ColumnDefinitions>
         <Button Content="Nuclear" HorizontalAlignment="Left" Margin="36,30,0,0" Width="124" RenderTransformOrigin="0.39,-0.177" Height="38" VerticalAlignment="Top"/>
-        <Label Content="Logoff" HorizontalAlignment="Right" Margin="0,30,32,0" Width="119" Height="38" VerticalAlignment="Top"/>
+        <Label Content="Logoff" HorizontalAlignment="Right" Margin="0,30,32,0" Width="119" Height="38" VerticalAlignment="Top" Grid.Column="5"/>
+        <TextBox Margin="17.8,98,10.2,4.2" TextWrapping="Wrap" Name="display" Grid.Column="1" Grid.ColumnSpan="4" Foreground="#FFF9F9F9" BorderBrush="#FF0C0B0B" CaretBrush="#FFD01313" Background="#FFAFD9A4" FontSize="20" >
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <Button Content="7" Margin="17.8,0,12,3.6" RenderTransformOrigin="0.906,0.238" Click="Button_Click" Grid.Column="1" Grid.Row="1" Height="27" VerticalAlignment="Bottom">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="8" Click="Button_Click_1" Margin="6,0,8.4,2.6" VerticalAlignment="Bottom" Height="28" RenderTransformOrigin="1.246,0.709" Grid.Column="2" Grid.Row="1">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="9" Click="Button_Click_2" Margin="7.6,0,4,2.6" Grid.Column="3" Grid.Row="1" Height="28" VerticalAlignment="Bottom">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="C" Margin="10,0,10.2,2.6" Grid.Column="4" Grid.Row="1" Click="Button_Click_11" Height="28" VerticalAlignment="Bottom">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="4" Click="Button_Click_3"  Margin="16.8,5.4,12,9.6" Grid.Column="1" Grid.Row="2">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="5" Margin="6,5.4,7.4,12.6" Grid.Column="2" Grid.Row="2" Click="Button_Click_4" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="6" Margin="7.6,5.4,4,12.6" Grid.Column="3" Grid.Row="2" Click="Button_Click_5">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="*" Margin="10,5.4,10.2,9.6" Grid.Column="4" Grid.Row="2" Click="Button_Click_16" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="1" Margin="16.8,0.4,13,3.2" Grid.Column="1" Grid.Row="3" RenderTransformOrigin="0.503,0.5" Click="Button_Click_6">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="2" Margin="6,0.4,7.4,3.2" Grid.Column="2" Grid.Row="3" Click="Button_Click_7">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="3" Margin="7.6,0.4,6,3.2" Grid.Column="3" Grid.Row="3" Click="Button_Click_8">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="/" Margin="10,0.4,10.2,1.2" Grid.Column="4" Grid.Row="3" Click="Button_Click_15">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="0" Margin="17.8,3.8,12,0.2" Grid.Column="1" Grid.Row="4" Click="Button_Click_10">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="+" Margin="6,3.8,8.4,0.2" Grid.Column="2" Grid.Row="4" Click="Button_Click_12">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="-" Margin="7.6,3.8,6,0.2" Grid.Column="3" Grid.Row="4" Click="Button_Click_14">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Button Content="=" Margin="10,3.8,10.2,0.2" Grid.Column="4" Grid.Row="4" Click="Button_Click_13">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
 
     </Grid>
 </UserControl>

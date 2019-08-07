@@ -35,8 +35,8 @@ namespace WPFCalculadora.Views
         {
             if (login == "admin" && senha == "admin")
             {
-                loginCorrect(null, new EventArgs());
                 this.Visibility = Visibility.Hidden;
+                loginCorrect(null, new EventArgs());
             }
 
             else

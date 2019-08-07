@@ -28,7 +28,7 @@ namespace WPFApp
         private void UcLoginForm_loginCorrect(object sender, EventArgs e)
         {
             ucTaskForm.Visibility = Visibility.Visible;
-            MessageBox.Show("Que Show Cara");
+           // MessageBox.Show("Que Show Cara");
         }
 
         private void UcLoginForm_loginCorrect_1(object sender, EventArgs e)
