@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/bootstrap-grid.css" rel="stylesheet" />
 
@@ -22,18 +21,20 @@
     <div class="row">
         <!-- Funcoes -->
         <div class="col-6" style="background-color:#bd6245;text-align:right;padding:5px;">
-            <label for="CEP">CEP</label>
+            <label for="Cep">CEP</label>
         </div>
         <div class="col-6" style="background-color:#bd6245;padding:5px;">
-            <input type="text" id="CEP" placeh acceptolder="Text content" />
+            <input type="text" id="Cep" placeh acceptolder="Text content" />
         </div>
 
+
         <div class="col-6" style="background-color:#bd6245;text-align:right;padding:5px;">
-            <label for="Rua"> Rua</label>
+            <label for="Rua">Rua</label>
         </div>
         <div class="col-6" style="background-color:#bd6245;padding:5px;">
-            <input type="text" id="Rua " placeholder="Text content" />
+            <input type="text" id="Rua" placeholder="Text content" />
         </div>
+        
 
         <div class="col-6" style="background-color:#bd6245;text-align:right;padding:5px;">
             <label for="Bairro"> Bairro</label>
@@ -42,6 +43,7 @@
             <input type="text" id="Bairro" placeholder="Text content" />
         </div>
 
+
         <div class="col-6" style="background-color:#bd6245;text-align:right;padding:5px;">
             <label for="Cidade"> Cidade</label>
         </div>
@@ -49,8 +51,9 @@
             <input type="text" id="Cidade" placeholder="Text content" />
         </div>
 
+
         <div class="col-6" style="background-color:#bd6245;text-align:right;padding:5px;">
-            <label for="Uf"> Uf</label>
+            <label for="Uf">Uf</label>
         </div>
         <div class="col-6" style="background-color:#bd6245;padding:5px;">
             <input type="text" id="Uf" placeholder="Text content" />
@@ -62,7 +65,6 @@
     <script src="Scripts/bootstrap.bundle.js"></script>
     <script src="Scripts/bootstrap.js"></script>
     <script src="Scripts/jquery-3.4.1.js"></script>
-
     <script>
 
         $(document).ready(function () {
@@ -77,10 +79,10 @@
             }
 
             //Quando o campo cep perde o foco.
-            $("#Cep").blur(function () {
+            $("#Button1").click(function () {
 
                 //Nova variável "cep" somente com dígitos.
-                var cep = $(this).val().replace(/\D/g, '');
+                var cep = $('#Cep').val().replace(/\D/g, '');
 
                 //Verifica se campo cep possui valor informado.
                 if (cep != "") {
@@ -128,7 +130,6 @@
                 }
             });
         });
-
 
     </script>
 </body>
