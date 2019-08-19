@@ -1,13 +1,18 @@
     /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
-	jQuery(document).ready(function(){
+    jQuery(document).ready(function(){
 
 		
 		jQuery('#bntCancelar').click(function(){
 			$('#bntCancelar').hide();
 			
 			$('#Id').val("");
-			$('#Nome').val("");
-			$('#Descricao').val("");
+			$('#Registro').val("");
+            $('#Titulo').val("");
+            $('#Isbn').val("");
+            $('#Genero').val("");
+            $('#Editora').val("");
+            $('#Sinopse').val("");
+            $('#Observacoes').val("");
 			$('#Ativo select').val("true");
 		});
 		
@@ -22,7 +27,7 @@
         var settings = {
 			"async": true,
 			"crossDomain": true,
-			"url": "http://localhost:59271/Api/Autores/"+id,
+			"url": "http://localhost:59271/Api/Livros/"+id,
 			"method": "GET",
 				"headers": {
 					"Content-Type": "application/json",
@@ -32,17 +37,22 @@
 	
 			$.ajax(settings).done(function (response) {
 				$('#Id').val(response.Id);
-				$('#Nome').val(response.Nome);
-				$('#Descricao').val(response.Descricao);
+				$('#Registro').val(response.Registro);
+                $('#Titulo').val(response.Titulo);
+                $('#Isbn').val(response.Isbn);
+                $('#Genero').val(response.Genero);
+                $('#Editora').val(response.Editora);
+                $('#Sinopse').val(response.Sinopse);
+                $('#Observacoes').val(response.Observacoes);
 				$('#Ativo select').val(response.Ativo);
 			});
 		
 	}
-
+	
 	function Deleting(id){
 			 var settings = {
 			  "crossDomain": true,
-			  "url": "http://localhost:59271/Api/Autores/"+id,
+			  "url": "http://localhost:59271/Api/Livros/"+id,
 			  "method": "DELETE",
 			  "headers": {
 				"Content-Type": "application/x-www-form-urlencoded",
@@ -59,7 +69,7 @@
 			var settings = {
 				"async": true,
 				"crossDomain": true,
-				"url": "http://localhost:59271/Api/Autores",
+				"url": "http://localhost:59271/Api/Livros",
 				"method": "GET",
 			        "headers": {
 					"Content-Type": "application/json",
@@ -79,8 +89,13 @@
 	   $('#tDataGrid').html(  '<tbody>'
 							+ 	'<tr>'
 							+ 		'<th>ID</th>'
-							+ 		'<th>Nome</th>'
-							+ 		'<th>Descricao</th>'
+							+ 		'<th>Registro</th>'
+                            + 		'<th>Titulo</th>'
+                            + 		'<th>Isbn</th>'
+                            + 		'<th>Genero</th>'
+                            + 		'<th>Editora</th>'
+                            + 		'<th>Sinopse</th>'
+                            + 		'<th>Observacoes</th>'
 							+ 		'<th>Ativo</th>'
 							+ 		'<th>Opções</th>'
 							+ 	'</tr>'
@@ -89,8 +104,13 @@
 		$.each(contentValue,function(index,value) {
         var row =     '<tr>'
 						+ '<td>' + value.Id       + '</td>'
-						+ '<td>' + value.Nome    + '</td>'
-						+ '<td>' + value.Descricao   + '</td>'
+						+ '<td>' + value.Registro    + '</td>'
+                        + '<td>' + value.Titulo   + '</td>'
+                        + '<td>' + value.Isbn   + '</td>'
+                        + '<td>' + value.Genero   + '</td>'
+                        + '<td>' + value.Editora   + '</td>'
+                        + '<td>' + value.Sinopse   + '</td>'
+                        + '<td>' + value.Observacoes  + '</td>'
 						+ '<td>' + value.Ativo    + '</td>'
 						+ '<td>' 
 						+ 	'<div    class=\'col-md-12\' style=\'float: right;\'>'
@@ -106,7 +126,3 @@
         $('#tDataGrid').append(row);
 		});
     }
-	
-	
-  
-  

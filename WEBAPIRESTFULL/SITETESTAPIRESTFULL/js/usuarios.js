@@ -1,47 +1,10 @@
 
+    GetMethod(null);
     /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
   	jQuery(document).ready(function(){
-		/* Indica que o evento submit do form irá realizar esta ação agora*/
-		jQuery('#formusuarios').submit(function(){
-			/* Neste contesto 'this' representa o form deste ID  #myform */                
-			var dados = $(this).serialize();
 
-			 var settings = {
-			  "crossDomain": true,
-			  "url": "http://localhost:59271/Api/Usuarios",
-			  "method": "POST",
-			  "headers": {
-				"Content-Type": "application/x-www-form-urlencoded",
-				"Accept": "*/*"
-			  },
-			  "data": dados
-			}
 
-			$.ajax(settings).done(function (response) {
-			    GetMethod();
-			});
-			
-			return false;
-		});
-		
-		jQuery('#bntSalvar').click(function(){
-			 Editing();
-			 
-			$('#bntSubmit').show();
-			$('#bntSalvar').hide();
-			$('#bntCancelar').hide();
-			
-			$('#Id').val("");
-			$('#Nome').val("");
-			$('#Login').val("");
-			$('#Email').val("");
-			$('#Senha').val("");
-			$('#Ativo select').val("true");
-		});
-		
 		jQuery('#bntCancelar').click(function(){
-			$('#bntSubmit').show();
-			$('#bntSalvar').hide();
 			$('#bntCancelar').hide();
 			
 			$('#Id').val("");
@@ -51,13 +14,14 @@
 			$('#Senha').val("");
 			$('#Ativo select').val("true");
 		});
+
 		
-		GetMethod();
+
 	});
 	
 	function GetByID(id){
-        $('#bntSubmit').hide();
-		$('#bntSalvar').show();
+      //   $('#bntSubmit').hide();
+	  //	$('#bntSalvar').show();
 		$('#bntCancelar').show();
 		
         var settings = {
@@ -82,43 +46,9 @@
 		
 	}
 	
-	function Editing(){
-		var dados = $('#formusuarios').serialize();
-		var id = $('#Id').val();
 
-		 var settings = {
-		  "crossDomain": true,
-		  "url": "http://localhost:59271/Api/Usuarios/"+id,
-		  "method": "PUT",
-		  "headers": {
-			"Content-Type": "application/x-www-form-urlencoded",
-			"Accept": "*/*"
-		  },
-		  "data": dados
-		}
-
-		$.ajax(settings).done(function (response) {
-		    GetMethod();
-		});
-	}
-	
-	function Deleting(id){
-			 var settings = {
-			  "crossDomain": true,
-			  "url": "http://localhost:59271/Api/Usuarios/"+id,
-			  "method": "DELETE",
-			  "headers": {
-				"Content-Type": "application/x-www-form-urlencoded",
-				"Accept": "*/*"
-			  }
-			}
-
-			$.ajax(settings).done(function (response) {
-			    GetMethod();
-			});
-	}
     
-    function GetMethod(){
+    function GetMethod(object){
 			var settings = {
 				"async": true,
 				"crossDomain": true,
@@ -160,7 +90,7 @@
 						+ '<td>' 
 						+ 	'<div    class=\'col-md-12\' style=\'float: right;\'>'
 						+ 		'<div    class=\'col-md-6\'>'
-						+ 			'<button class=\'btn btn-block btn-danger col-md-3 ajax\' type=\'button\'  onclick=\'Deleting('+ value.Id +')\'>Remover</button>'
+						+ 			'<button class=\'btn btn-block btn-danger btn-delet-event\' type=\'button\'  send-post=\'Usuarios\' value=\''+ value.Id +'\'>Remover</button>'
 						+ 		'</div>'
 						+ 		'<div     class=\'col-md-6\'>'
 						+ 			'<button  class=\'btn btn-block btn-success col-md-3\'    type=\'button\'  onclick=\'GetByID('+ value.Id +')\'\>Editar</button>'
@@ -170,6 +100,8 @@
 					+ '</tr>';
         $('#tDataGrid').append(row);
 		});
+
+		SetGridClickEvents();
     }
 	
 	

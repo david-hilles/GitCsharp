@@ -1,14 +1,17 @@
     /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
-	jQuery(document).ready(function(){
+    jQuery(document).ready(function(){
 
 		
 		jQuery('#bntCancelar').click(function(){
 			$('#bntCancelar').hide();
 			
 			$('#Id').val("");
-			$('#Nome').val("");
-			$('#Descricao').val("");
-			$('#Ativo select').val("true");
+			$('#Livro').val("");
+            $('#Usuario').val("");
+            $('#Tipo').val("");
+            $('#Devolucao').val("");
+            $('#Ativo select').val("true");
+            
 		});
 		
 		GetMethod(null);
@@ -22,7 +25,7 @@
         var settings = {
 			"async": true,
 			"crossDomain": true,
-			"url": "http://localhost:59271/Api/Autores/"+id,
+			"url": "http://localhost:59271/Api/Locacao/"+id,
 			"method": "GET",
 				"headers": {
 					"Content-Type": "application/json",
@@ -32,17 +35,19 @@
 	
 			$.ajax(settings).done(function (response) {
 				$('#Id').val(response.Id);
-				$('#Nome').val(response.Nome);
-				$('#Descricao').val(response.Descricao);
+				$('#Livro').val(response.Livro);
+                $('#Usuario').val(response.Usuario);
+                $('#Tipo').val(response.Tipo);
+                $('#Devolucao').val(response.Devolucao);
 				$('#Ativo select').val(response.Ativo);
 			});
 		
 	}
-
+	
 	function Deleting(id){
 			 var settings = {
 			  "crossDomain": true,
-			  "url": "http://localhost:59271/Api/Autores/"+id,
+			  "url": "http://localhost:59271/Api/Locacao/"+id,
 			  "method": "DELETE",
 			  "headers": {
 				"Content-Type": "application/x-www-form-urlencoded",
@@ -59,7 +64,7 @@
 			var settings = {
 				"async": true,
 				"crossDomain": true,
-				"url": "http://localhost:59271/Api/Autores",
+				"url": "http://localhost:59271/Api/Locacao",
 				"method": "GET",
 			        "headers": {
 					"Content-Type": "application/json",
@@ -79,8 +84,10 @@
 	   $('#tDataGrid').html(  '<tbody>'
 							+ 	'<tr>'
 							+ 		'<th>ID</th>'
-							+ 		'<th>Nome</th>'
-							+ 		'<th>Descricao</th>'
+							+ 		'<th>Livro</th>'
+                            + 		'<th>Usuario</th>'
+                            + 		'<th>Tipo</th>'
+                            + 		'<th>Devolucao</th>'
 							+ 		'<th>Ativo</th>'
 							+ 		'<th>Opções</th>'
 							+ 	'</tr>'
@@ -89,8 +96,10 @@
 		$.each(contentValue,function(index,value) {
         var row =     '<tr>'
 						+ '<td>' + value.Id       + '</td>'
-						+ '<td>' + value.Nome    + '</td>'
-						+ '<td>' + value.Descricao   + '</td>'
+						+ '<td>' + value.Livro    + '</td>'
+                        + '<td>' + value.Usuario   + '</td>'
+                        + '<td>' + value.Tipo  + '</td>'
+                        + '<td>' + value.Devolucao  + '</td>'
 						+ '<td>' + value.Ativo    + '</td>'
 						+ '<td>' 
 						+ 	'<div    class=\'col-md-12\' style=\'float: right;\'>'
@@ -106,7 +115,3 @@
         $('#tDataGrid').append(row);
 		});
     }
-	
-	
-  
-  
