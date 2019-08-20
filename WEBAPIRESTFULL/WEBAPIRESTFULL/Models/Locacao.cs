@@ -20,12 +20,7 @@ namespace WEBAPIRESTFULL.Models
 
         public DateTime Devolucao { get; set; } = DateTime.Now;
 
+        [JsonIgnore]
         public virtual Livros Livros { get; set; }
-
-        public virtual Usuarios Usuarios { get; set; }
-        [JsonIgnore]
-        public virtual Usuarios Usuarios1 { get; set; }
-        [JsonIgnore]
-        public virtual Usuarios Usuarios2 { get; set; }
     }
 }

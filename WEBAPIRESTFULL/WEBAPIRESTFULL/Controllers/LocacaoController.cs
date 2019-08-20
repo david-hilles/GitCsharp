@@ -21,8 +21,9 @@ namespace WEBAPIRESTFULL.Controllers
         // GET: api/Locacaos
         public IQueryable<Locacao> GetLocacao()
         {
-            return db.Locacao.Where(x => x.Ativo == true);
-        }
+            var retorno  =  db.Locacao.Where(x => x.Ativo == true);
+            return retorno;
+         }
 
         // GET: api/Locacaos/5
         [ResponseType(typeof(Locacao))]

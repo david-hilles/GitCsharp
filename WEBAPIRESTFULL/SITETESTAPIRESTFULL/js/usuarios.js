@@ -14,39 +14,9 @@
 			$('#Senha').val("");
 			$('#Ativo select').val("true");
 		});
-
 		
 
 	});
-	
-	function GetByID(id){
-      //   $('#bntSubmit').hide();
-	  //	$('#bntSalvar').show();
-		$('#bntCancelar').show();
-		
-        var settings = {
-			"async": true,
-			"crossDomain": true,
-			"url": "http://localhost:59271/Api/Usuarios/"+id,
-			"method": "GET",
-				"headers": {
-					"Content-Type": "application/json",
-					"Accept": "*/*"
-				}
-			}
-	
-			$.ajax(settings).done(function (response) {
-				$('#Id').val(response.Id);
-				$('#Nome').val(response.Nome);
-				$('#Login').val(response.Login);
-				$('#Senha').val(response.Senha);
-				$('#Email').val(response.Email);
-				$('#Ativo select').val(response.Ativo);
-			});
-		
-	}
-	
-
     
     function GetMethod(object){
 			var settings = {
@@ -81,9 +51,9 @@
 							+ '</tbody>');
 
 		$.each(contentValue,function(index,value) {
-        var row =     '<tr>'
+        var row =         '<tr>'
 						+ '<td>' + value.Id       + '</td>'
-						+ '<td>' + value.Nome    + '</td>'
+						+ '<td>' + value.Nome     + '</td>'
 						+ '<td>' + value.Login    + '</td>'
 						+ '<td>' + value.Email    + '</td>'
 						+ '<td>' + value.Ativo    + '</td>'
@@ -93,15 +63,16 @@
 						+ 			'<button class=\'btn btn-block btn-danger btn-delet-event\' type=\'button\'  send-post=\'Usuarios\' value=\''+ value.Id +'\'>Remover</button>'
 						+ 		'</div>'
 						+ 		'<div     class=\'col-md-6\'>'
-						+ 			'<button  class=\'btn btn-block btn-success col-md-3\'    type=\'button\'  onclick=\'GetByID('+ value.Id +')\'\>Editar</button>'
+						+ 			'<button  class=\'btn btn-block btn-success col-md-3\ btn-editing-event\'send-post=\'Usuarios\' value=\''+ value.Id +'\' type=\'button\'\>Editar</button>'
 						+ 		'</div>'
 						+ 	'</div>'
 						+ '</td>'
-					+ '</tr>';
+					    + '</tr>';
         $('#tDataGrid').append(row);
 		});
 
 		SetGridClickEvents();
+		
     }
 	
 	
