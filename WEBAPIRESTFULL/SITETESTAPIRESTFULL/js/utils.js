@@ -40,10 +40,22 @@ jQuery(document).ready(function () {
 
 		});
 
+		$.each(this,function(index,value){
+			$('[Name=\''+ value.name +'\']').val("");
+		});
+
 		return false;
 	});
 
-	SetGridClickEvents();
+	jQuery('.btn-cancel-form').click(function(){
+		var form = $(this).parent().parent().parent()[0];
+		
+		$.each(form,function(index,value){
+			$('[Name=\''+ value.name +'\']').val("");
+
+		});
+
+	});
 
 });
 
